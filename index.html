@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ottloop Tools – 100+ Free Online Tools</title>
+<meta name="description" content="Ottloop Tools – Your all-in-one free online toolbox. Image, PDF, Video, Audio, Text, Developer, SEO, Design & Calculator tools. No signup required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070C1A;
+    --bg2: #0D1526;
+    --bg3: #111827;
+    --cyan: #00D4FF;
+    --cyan-dim: rgba(0,212,255,0.12);
+    --cyan-glow: rgba(0,212,255,0.35);
+    --amber: #FFB830;
+    --white: #F0F8FF;
+    --muted: #8892A4;
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.07);
+    --radius: 14px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ───────── NAV ───────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(18px);
+    background: rgba(7,12,26,0.85);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+  }
+
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px; font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--white);
+  }
+
+  .logo-icon {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--cyan), #0077ff);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .logo span { color: var(--cyan); }
+
+  .nav-links {
+    display: flex; gap: 28px; list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--cyan); color: #000 !important;
+    padding: 8px 20px; border-radius: 8px;
+    font-weight: 600 !important;
+    transition: opacity .2s !important;
+  }
+  .nav-cta:hover { opacity: .85; }
+
+  /* ───────── HERO ───────── */
+  .hero {
+    min-height: 92vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 60px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Background grid */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+  }
+
+  /* Radial glow */
+  .hero::after {
+    content: '';
+    position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(0,212,255,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(0,212,255,0.25);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 13px; font-weight: 500; color: var(--cyan);
+    margin-bottom: 32px;
+    position: relative; z-index: 1;
+  }
+
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: var(--cyan); border-radius: 50%;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .5; transform: scale(1.4); }
+  }
+
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(38px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+    position: relative; z-index: 1;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(90deg, var(--cyan), #60a5fa);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .hero p {
+    font-size: clamp(15px, 2vw, 19px);
+    color: var(--muted);
+    max-width: 560px;
+    margin: 0 auto 40px;
+    position: relative; z-index: 1;
+  }
+
+  .hero-actions {
+    display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+    position: relative; z-index: 1;
+  }
+
+  .btn-primary {
+    background: var(--cyan);
+    color: #000; font-weight: 700;
+    padding: 14px 32px; border-radius: 10px;
+    text-decoration: none; font-size: 15px;
+    display: flex; align-items: center; gap: 8px;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 0 30px rgba(0,212,255,0.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(0,212,255,0.5); }
+
+  .btn-secondary {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--white); font-weight: 600;
+    padding: 14px 32px; border-radius: 10px;
+    text-decoration: none; font-size: 15px;
+    display: flex; align-items: center; gap: 8px;
+    transition: background .2s, border-color .2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
+
+  /* ───────── STATS STRIP ───────── */
+  .stats {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+    padding: 0 5%;
+  }
+
+  .stat {
+    flex: 1; min-width: 140px;
+    padding: 28px 20px; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px; font-weight: 700; color: var(--cyan);
+    line-height: 1;
+  }
+
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* ───────── CATEGORY GRID ───────── */
+  .section { padding: 80px 5%; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+
+  .section-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--cyan);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 700; letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    color: var(--muted); font-size: 16px; margin-top: 12px;
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .cat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    cursor: pointer;
+    transition: border-color .25s, background .25s, transform .25s;
+    position: relative; overflow: hidden;
+    text-decoration: none; color: inherit;
+    display: block;
+  }
+
+  .cat-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--cyan-dim), transparent);
+    opacity: 0; transition: opacity .3s;
+  }
+
+  .cat-card:hover {
+    border-color: rgba(0,212,255,0.35);
+    background: rgba(0,212,255,0.05);
+    transform: translateY(-3px);
+  }
+  .cat-card:hover::before { opacity: 1; }
+
+  .cat-icon {
+    font-size: 32px; margin-bottom: 14px;
+    display: block;
+  }
+
+  .cat-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px; font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .cat-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  .cat-count {
+    display: inline-block; margin-top: 14px;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(0,212,255,0.18);
+    color: var(--cyan); font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 100px;
+  }
+
+  /* ───────── TOOLS SHOWCASE ───────── */
+  .tools-section { background: var(--bg2); }
+
+  .tab-bar {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .tab-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 8px 18px; border-radius: 8px; font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: all .2s; white-space: nowrap;
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--cyan-dim);
+    border-color: rgba(0,212,255,0.35); color: var(--cyan);
+  }
+
+  .tool-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .tool-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 10px;
+    transition: border-color .2s, background .2s;
+    cursor: pointer;
+    text-decoration: none; color: inherit;
+  }
+
+  .tool-item:hover {
+    border-color: rgba(0,212,255,0.3);
+    background: rgba(0,212,255,0.05);
+  }
+
+  .tool-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--cyan); flex-shrink: 0;
+  }
+
+  .tool-name { font-size: 13px; font-weight: 500; color: var(--white); }
+
+  /* ───────── WHY SECTION ───────── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .why-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+  }
+
+  .why-icon {
+    font-size: 28px; margin-bottom: 14px;
+  }
+
+  .why-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; font-weight: 600; margin-bottom: 8px;
+  }
+
+  .why-desc { font-size: 13px; color: var(--muted); }
+
+  /* ───────── CTA SECTION ───────── */
+  .cta-section {
+    text-align: center;
+    padding: 100px 5%;
+    background: var(--bg2);
+    position: relative; overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(0,212,255,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700; letter-spacing: -1px;
+    margin-bottom: 16px; position: relative; z-index: 1;
+  }
+
+  .cta-section p {
+    color: var(--muted); font-size: 16px;
+    margin-bottom: 36px; position: relative; z-index: 1;
+  }
+
+  /* ───────── CONTACT SECTION ───────── */
+  .contact-section { padding: 80px 5%; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 900px; margin: 0 auto;
+  }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    display: flex; align-items: center; gap: 16px;
+    text-decoration: none; color: inherit;
+    transition: border-color .2s, background .2s;
+  }
+  .contact-card:hover { border-color: rgba(0,212,255,0.35); background: rgba(0,212,255,0.05); }
+
+  .contact-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+
+  .contact-icon.phone { background: rgba(37,211,102,0.15); }
+  .contact-icon.whatsapp { background: rgba(37,211,102,0.15); }
+  .contact-icon.mail { background: rgba(0,212,255,0.12); }
+  .contact-icon.web { background: rgba(255,184,48,0.12); }
+
+  .contact-label { font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+  .contact-val { font-weight: 600; font-size: 15px; }
+
+  /* ───────── FOOTER ───────── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding: 40px 5% 32px;
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: space-between;
+    gap: 16px;
+  }
+
+  .footer-left { font-size: 14px; color: var(--muted); }
+  .footer-left strong { color: var(--cyan); }
+
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--white); }
+
+  /* ───────── RESPONSIVE ───────── */
+  @media (max-width: 680px) {
+    .nav-links { display: none; }
+    .stat { min-width: 100px; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .tool-list { grid-template-columns: 1fr; }
+  }
+
+  /* ───────── SCROLL ANIMATION ───────── */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ───────── SEARCH BAR ───────── */
+  .search-wrap {
+    position: relative; max-width: 560px; width: 100%;
+    margin: 0 auto 0;
+    position: relative; z-index: 1;
+  }
+
+  .search-bar {
+    width: 100%; padding: 16px 56px 16px 52px;
+    background: rgba(255,255,255,0.06);
+    border: 1.5px solid rgba(0,212,255,0.25);
+    border-radius: 12px;
+    color: var(--white); font-size: 15px; font-family: 'Inter', sans-serif;
+    outline: none; transition: border-color .2s, background .2s;
+    margin-top: 32px;
+  }
+  .search-bar::placeholder { color: var(--muted); }
+  .search-bar:focus { border-color: var(--cyan); background: rgba(0,212,255,0.06); }
+
+  .search-icon {
+    position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+    font-size: 18px; color: var(--muted); pointer-events: none;
+    margin-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">⚙️</div>
+    Ottloop <span>Tools</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#tools">All Tools</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/917382680200" class="nav-cta">WhatsApp Us</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    100% Free · No Signup Required
+  </div>
+
+  <h1>
+    Every Tool You Need,<br>
+    <em>All in One Place</em>
+  </h1>
+
+  <p>Image, PDF, Video, Audio, Text, Developer, SEO, Design & Calculator tools — 100+ free online tools at your fingertips.</p>
+
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-bar" type="text" placeholder="Search tools... e.g. Image Compressor, PDF Merger" id="searchInput">
+  </div>
+
+  <div class="hero-actions" style="margin-top:28px;">
+    <a href="#categories" class="btn-primary">Explore All Tools →</a>
+    <a href="https://wa.me/917382680200" class="btn-secondary">💬 WhatsApp Us</a>
+  </div>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num" id="cnt1">0</div>
+    <div class="stat-label">Free Tools</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" id="cnt2">0</div>
+    <div class="stat-label">Tool Categories</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" id="cnt3">0</div>
+    <div class="stat-label">Happy Users</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num" id="cnt4">0</div>
+    <div class="stat-label">Files Processed</div>
+  </div>
+</div>
+
+<!-- ═══════════ CATEGORIES ═══════════ -->
+<section class="section" id="categories">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Browse by Category</div>
+    <h2 class="section-title">Everything You Need, Organized</h2>
+    <p class="section-sub">Pick a category and dive into powerful, free tools — no install, no hassle.</p>
+  </div>
+
+  <div class="cat-grid">
+
+    <a href="#image-tools" class="cat-card reveal">
+      <span class="cat-icon">🖼️</span>
+      <div class="cat-name">Image Tools</div>
+      <div class="cat-desc">Compress, resize, crop, convert, watermark, filter images and much more.</div>
+      <span class="cat-count">17 Tools</span>
+    </a>
+
+    <a href="#pdf-tools" class="cat-card reveal">
+      <span class="cat-icon">📄</span>
+      <div class="cat-name">PDF Tools</div>
+      <div class="cat-desc">Merge, split, compress, rotate, convert PDFs with ease.</div>
+      <span class="cat-count">10 Tools</span>
+    </a>
+
+    <a href="#video-tools" class="cat-card reveal">
+      <span class="cat-icon">🎥</span>
+      <div class="cat-name">Video Tools</div>
+      <div class="cat-desc">Trim, convert, compress, merge videos and extract audio.</div>
+      <span class="cat-count">10 Tools</span>
+    </a>
+
+    <a href="#audio-tools" class="cat-card reveal">
+      <span class="cat-icon">🎵</span>
+      <div class="cat-name">Audio Tools</div>
+      <div class="cat-desc">Cut, merge, convert, boost volume and change playback speed.</div>
+      <span class="cat-count">6 Tools</span>
+    </a>
+
+    <a href="#text-tools" class="cat-card reveal">
+      <span class="cat-icon">✍️</span>
+      <div class="cat-name">Text Tools</div>
+      <div class="cat-desc">Word counter, case converter, find & replace, text compare and more.</div>
+      <span class="cat-count">14 Tools</span>
+    </a>
+
+    <a href="#security-tools" class="cat-card reveal">
+      <span class="cat-icon">🔐</span>
+      <div class="cat-name">Password & Security</div>
+      <div class="cat-desc">Generate passwords, MD5/SHA hashes, encode/decode Base64 and URLs.</div>
+      <span class="cat-count">10 Tools</span>
+    </a>
+
+    <a href="#dev-tools" class="cat-card reveal">
+      <span class="cat-icon">👨‍💻</span>
+      <div class="cat-name">Developer Tools</div>
+      <div class="cat-desc">JSON, HTML, CSS, JS, XML formatters, Regex tester, UUID generator & more.</div>
+      <span class="cat-count">16 Tools</span>
+    </a>
+
+    <a href="#seo-tools" class="cat-card reveal">
+      <span class="cat-icon">🌐</span>
+      <div class="cat-name">SEO Tools</div>
+      <div class="cat-desc">Meta tag, sitemap, robots.txt, Open Graph generators and SERP preview.</div>
+      <span class="cat-count">10 Tools</span>
+    </a>
+
+    <a href="#social-tools" class="cat-card reveal">
+      <span class="cat-icon">📱</span>
+      <div class="cat-name">Social Media Tools</div>
+      <div class="cat-desc">Hashtag generator, fancy fonts, emoji copier, caption formatter.</div>
+      <span class="cat-count">6 Tools</span>
+    </a>
+
+    <a href="#design-tools" class="cat-card reveal">
+      <span class="cat-icon">🎨</span>
+      <div class="cat-name">Design Tools</div>
+      <div class="cat-desc">Color picker, gradient & shadow generators, glassmorphism builder.</div>
+      <span class="cat-count">12 Tools</span>
+    </a>
+
+    <a href="#calculator-tools" class="cat-card reveal">
+      <span class="cat-icon">📊</span>
+      <div class="cat-name">Calculator Tools</div>
+      <div class="cat-desc">Age, EMI, GST, BMI, SIP, loan, discount calculators and unit converters.</div>
+      <span class="cat-count">12 Tools</span>
+    </a>
+
+    <a href="#file-tools" class="cat-card reveal">
+      <span class="cat-icon">📁</span>
+      <div class="cat-name">File Tools</div>
+      <div class="cat-desc">ZIP creator/extractor, file checksum, metadata viewer and more.</div>
+      <span class="cat-count">6 Tools</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ═══════════ TOOLS SHOWCASE ═══════════ -->
+<section class="section tools-section" id="tools">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Quick Access</div>
+    <h2 class="section-title">Browse All 100+ Tools</h2>
+    <p class="section-sub">Filter by category and start using any tool instantly.</p>
+  </div>
+
+  <div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-cat="all">All Tools</button>
+    <button class="tab-btn" data-cat="image">🖼️ Image</button>
+    <button class="tab-btn" data-cat="pdf">📄 PDF</button>
+    <button class="tab-btn" data-cat="video">🎥 Video</button>
+    <button class="tab-btn" data-cat="audio">🎵 Audio</button>
+    <button class="tab-btn" data-cat="text">✍️ Text</button>
+    <button class="tab-btn" data-cat="security">🔐 Security</button>
+    <button class="tab-btn" data-cat="dev">👨‍💻 Developer</button>
+    <button class="tab-btn" data-cat="seo">🌐 SEO</button>
+    <button class="tab-btn" data-cat="social">📱 Social</button>
+    <button class="tab-btn" data-cat="design">🎨 Design</button>
+    <button class="tab-btn" data-cat="calc">📊 Calculator</button>
+    <button class="tab-btn" data-cat="file">📁 File</button>
+  </div>
+
+  <div class="tool-list" id="toolList"></div>
+</section>
+
+<!-- ═══════════ WHY OTTLOOP ═══════════ -->
+<section class="section" id="why">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Why Ottloop Tools</div>
+    <h2 class="section-title">Built for Speed, Built for Everyone</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">⚡</div>
+      <div class="why-title">Lightning Fast</div>
+      <div class="why-desc">All tools run directly in your browser. No server uploads, no waiting — instant results.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🔒</div>
+      <div class="why-title">100% Private</div>
+      <div class="why-desc">Your files never leave your device. We process everything locally for maximum privacy.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🆓</div>
+      <div class="why-title">Always Free</div>
+      <div class="why-desc">No hidden charges, no subscriptions, no sign-up. Every tool is completely free to use.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">📱</div>
+      <div class="why-title">Works Everywhere</div>
+      <div class="why-desc">Fully responsive — use Ottloop Tools on your phone, tablet, or desktop seamlessly.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🌍</div>
+      <div class="why-title">No Install Needed</div>
+      <div class="why-desc">Open your browser, visit tools.ottloop.com, and start working. It's that simple.</div>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">🛠️</div>
+      <div class="why-title">100+ Tools & Growing</div>
+      <div class="why-desc">We're constantly adding new tools based on user needs. Got a suggestion? Tell us!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="cta-section">
+  <div class="section-eyebrow">Ready to Get Started?</div>
+  <h2>Your Toolbox Awaits</h2>
+  <p>No account needed. Just open a tool and start working — for free, forever.</p>
+  <div class="hero-actions" style="justify-content:center;">
+    <a href="#categories" class="btn-primary">Explore All Tools →</a>
+    <a href="mailto:ottloopstore@gmail.com" class="btn-secondary">📧 Email Us</a>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="section contact-section" id="contact">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-title">We're Here to Help</h2>
+    <p class="section-sub">Have a question, suggestion, or feedback? Reach out any time.</p>
+  </div>
+
+  <div class="contact-grid">
+    <a href="tel:+917382680200" class="contact-card reveal">
+      <div class="contact-icon phone">📞</div>
+      <div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-val">+91 73826 80200</div>
+      </div>
+    </a>
+    <a href="https://wa.me/917382680200" class="contact-card reveal" target="_blank">
+      <div class="contact-icon whatsapp">💬</div>
+      <div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-val">+91 73826 80200</div>
+      </div>
+    </a>
+    <a href="mailto:ottloopstore@gmail.com" class="contact-card reveal">
+      <div class="contact-icon mail">✉️</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-val">ottloopstore@gmail.com</div>
+      </div>
+    </a>
+    <a href="https://tools.ottloop.com" class="contact-card reveal" target="_blank">
+      <div class="contact-icon web">🌐</div>
+      <div>
+        <div class="contact-label">Website</div>
+        <div class="contact-val">tools.ottloop.com</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-left">
+    © 2025 <strong>Ottloop Tools</strong> · tools.ottloop.com · All rights reserved.
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#contact">Contact</a>
+    <a href="https://wa.me/917382680200" target="_blank">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+// ── All Tools Data ──
+const allTools = [
+  // image
+  {name:"Image Compressor",cat:"image"},{name:"Image Resizer",cat:"image"},{name:"Image Cropper",cat:"image"},
+  {name:"Image Rotator",cat:"image"},{name:"Image Flipper",cat:"image"},{name:"Image Converter (JPG, PNG, WebP)",cat:"image"},
+  {name:"Image to Base64",cat:"image"},{name:"Base64 to Image",cat:"image"},{name:"Image Watermark",cat:"image"},
+  {name:"Image Border",cat:"image"},{name:"Image Metadata Viewer",cat:"image"},{name:"Image Color Picker",cat:"image"},
+  {name:"Image Splitter",cat:"image"},{name:"Image Merger",cat:"image"},{name:"Image Filters",cat:"image"},
+  {name:"Image Brightness & Contrast",cat:"image"},{name:"Image Grayscale",cat:"image"},{name:"Image Blur",cat:"image"},
+  // pdf
+  {name:"Merge PDF",cat:"pdf"},{name:"Split PDF",cat:"pdf"},{name:"Compress PDF",cat:"pdf"},
+  {name:"Rotate PDF",cat:"pdf"},{name:"Reorder PDF Pages",cat:"pdf"},{name:"PDF to Image",cat:"pdf"},
+  {name:"Image to PDF",cat:"pdf"},{name:"Add Page Numbers",cat:"pdf"},{name:"Add Watermark",cat:"pdf"},
+  {name:"Extract PDF Pages",cat:"pdf"},
+  // video
+  {name:"Video Compressor",cat:"video"},{name:"Video Trimmer",cat:"video"},{name:"Video Merger",cat:"video"},
+  {name:"Video Converter",cat:"video"},{name:"Video Rotator",cat:"video"},{name:"Video Speed Controller",cat:"video"},
+  {name:"Video to GIF",cat:"video"},{name:"GIF to Video",cat:"video"},{name:"Extract Audio",cat:"video"},
+  {name:"Mute Video",cat:"video"},
+  // audio
+  {name:"Audio Cutter",cat:"audio"},{name:"Audio Merger",cat:"audio"},{name:"Audio Converter",cat:"audio"},
+  {name:"Volume Booster",cat:"audio"},{name:"Audio Compressor",cat:"audio"},{name:"Change Playback Speed",cat:"audio"},
+  // text
+  {name:"Word Counter",cat:"text"},{name:"Character Counter",cat:"text"},{name:"Sentence Counter",cat:"text"},
+  {name:"Paragraph Counter",cat:"text"},{name:"Remove Extra Spaces",cat:"text"},{name:"Remove Duplicate Lines",cat:"text"},
+  {name:"Sort Lines",cat:"text"},{name:"Reverse Text",cat:"text"},{name:"Case Converter",cat:"text"},
+  {name:"Random Text Generator",cat:"text"},{name:"Lorem Ipsum Generator",cat:"text"},{name:"Text Repeater",cat:"text"},
+  {name:"Find & Replace",cat:"text"},{name:"Text Compare",cat:"text"},
+  // security
+  {name:"Password Generator",cat:"security"},{name:"Password Strength Checker",cat:"security"},{name:"MD5 Generator",cat:"security"},
+  {name:"SHA1 Generator",cat:"security"},{name:"SHA256 Generator",cat:"security"},{name:"Base64 Encoder",cat:"security"},
+  {name:"Base64 Decoder",cat:"security"},{name:"URL Encoder",cat:"security"},{name:"URL Decoder",cat:"security"},
+  {name:"JWT Decoder",cat:"security"},
+  // dev
+  {name:"JSON Formatter",cat:"dev"},{name:"JSON Validator",cat:"dev"},{name:"JSON Minifier",cat:"dev"},
+  {name:"HTML Formatter",cat:"dev"},{name:"HTML Minifier",cat:"dev"},{name:"CSS Minifier",cat:"dev"},
+  {name:"CSS Beautifier",cat:"dev"},{name:"JavaScript Minifier",cat:"dev"},{name:"JavaScript Beautifier",cat:"dev"},
+  {name:"XML Formatter",cat:"dev"},{name:"XML Validator",cat:"dev"},{name:"SQL Formatter",cat:"dev"},
+  {name:"Markdown Preview",cat:"dev"},{name:"Regex Tester",cat:"dev"},{name:"UUID Generator",cat:"dev"},
+  {name:"Timestamp Converter",cat:"dev"},
+  // seo
+  {name:"Meta Tag Generator",cat:"seo"},{name:"Robots.txt Generator",cat:"seo"},{name:"Sitemap Generator",cat:"seo"},
+  {name:"Open Graph Generator",cat:"seo"},{name:"Twitter Card Generator",cat:"seo"},{name:"Canonical URL Generator",cat:"seo"},
+  {name:"Slug Generator",cat:"seo"},{name:"Keyword Density Checker",cat:"seo"},{name:"Word Count Tool",cat:"seo"},
+  {name:"SERP Preview",cat:"seo"},
+  // social
+  {name:"Hashtag Generator",cat:"social"},{name:"Caption Formatter",cat:"social"},{name:"Bio Text Formatter",cat:"social"},
+  {name:"Text Styler",cat:"social"},{name:"Emoji Copier",cat:"social"},{name:"Fancy Font Generator",cat:"social"},
+  // design
+  {name:"Color Picker",cat:"design"},{name:"HEX to RGB",cat:"design"},{name:"RGB to HEX",cat:"design"},
+  {name:"HSL Converter",cat:"design"},{name:"Color Palette Generator",cat:"design"},{name:"Gradient Generator",cat:"design"},
+  {name:"CSS Gradient Generator",cat:"design"},{name:"Box Shadow Generator",cat:"design"},{name:"Text Shadow Generator",cat:"design"},
+  {name:"Border Radius Generator",cat:"design"},{name:"Glassmorphism Generator",cat:"design"},{name:"Neumorphism Generator",cat:"design"},
+  // calc
+  {name:"Age Calculator",cat:"calc"},{name:"Percentage Calculator",cat:"calc"},{name:"Discount Calculator",cat:"calc"},
+  {name:"EMI Calculator",cat:"calc"},{name:"GST Calculator",cat:"calc"},{name:"SIP Calculator",cat:"calc"},
+  {name:"Loan Calculator",cat:"calc"},{name:"BMI Calculator",cat:"calc"},{name:"Date Difference Calculator",cat:"calc"},
+  {name:"Time Calculator",cat:"calc"},{name:"Unit Converter",cat:"calc"},{name:"Currency Converter",cat:"calc"},
+  // file
+  {name:"ZIP Creator",cat:"file"},{name:"ZIP Extractor",cat:"file"},{name:"File Size Calculator",cat:"file"},
+  {name:"File Checksum Generator",cat:"file"},{name:"Rename Files",cat:"file"},{name:"File Metadata Viewer",cat:"file"},
+];
+
+let activeCat = "all";
+let searchQuery = "";
+
+function renderTools() {
+  const list = document.getElementById("toolList");
+  const filtered = allTools.filter(t => {
+    const matchCat = activeCat === "all" || t.cat === activeCat;
+    const matchSearch = t.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchCat && matchSearch;
+  });
+
+  list.innerHTML = filtered.map(t => `
+    <a href="https://tools.ottloop.com/${t.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')}" class="tool-item">
+      <span class="tool-dot"></span>
+      <span class="tool-name">${t.name}</span>
+    </a>
+  `).join('');
+}
+
+// Tab switching
+document.getElementById("tabBar").addEventListener("click", e => {
+  const btn = e.target.closest(".tab-btn");
+  if (!btn) return;
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  activeCat = btn.dataset.cat;
+  renderTools();
+});
+
+// Search
+document.getElementById("searchInput").addEventListener("input", e => {
+  searchQuery = e.target.value;
+  activeCat = "all";
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.querySelector('[data-cat="all"]').classList.add("active");
+  renderTools();
+});
+
+renderTools();
+
+// ── Counter animation ──
+function animateCounter(el, target, suffix="") {
+  let start = 0;
+  const step = target / 60;
+  const interval = setInterval(() => {
+    start += step;
+    if (start >= target) { el.textContent = target + suffix; clearInterval(interval); return; }
+    el.textContent = Math.floor(start) + suffix;
+  }, 16);
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(document.getElementById("cnt1"), 100, "+");
+      animateCounter(document.getElementById("cnt2"), 12);
+      animateCounter(document.getElementById("cnt3"), 50, "K+");
+      animateCounter(document.getElementById("cnt4"), 200, "K+");
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+
+observer.observe(document.querySelector(".stats"));
+
+// ── Scroll reveal ──
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("visible");
+  });
+}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
