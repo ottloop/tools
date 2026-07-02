@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter — Get New Tools First | OttLoop Tools</title>
+<meta name="description" content="Subscribe to the OttLoop Tools newsletter for one email per tool drop — new image, PDF, text, SEO, developer and calculator tools as they ship. No spam, unsubscribe anytime.">
+<link rel="canonical" href="https://tools.ottloop.com/newsletter.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OttLoop Tools">
+<meta property="og:title" content="Newsletter — Get New Tools First | OttLoop Tools">
+<meta property="og:description" content="One email per tool drop. New image, PDF, text, SEO, developer and calculator tools as they ship. No spam, unsubscribe anytime.">
+<meta property="og:url" content="https://tools.ottloop.com/newsletter.html">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Newsletter — Get New Tools First | OttLoop Tools">
+<meta name="twitter:description" content="One email per tool drop. No spam, unsubscribe anytime.">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --black: #0A0C10;
+    --black-soft: #12151C;
+    --black-card: #171B24;
+    --line: #262B38;
+    --blue: #3B63FF;
+    --blue-deep: #16215C;
+    --blue-glow: #6B8CFF;
+    --red: #FF3B4E;
+    --red-deep: #4A0F17;
+    --white: #F4F5F9;
+    --grey: #8C93A8;
+    --grey-dim: #565E75;
+    --radius: 14px;
+    --max: 1200px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    line-height:1.1;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img,svg{display:block;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  section{position:relative;}
+
+  ::selection{background:var(--blue);color:var(--white);}
+
+  :focus-visible{
+    outline:2px solid var(--blue-glow);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- background texture ---------- */
+  .grain{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:0.035;
+    z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- NAVBAR ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(10,12,16,0.72);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .logo .mk{color:var(--grey);font-weight:500;font-size:11px;letter-spacing:0.08em;margin-left:2px;}
+  .logo-mark{width:30px;height:30px;flex-shrink:0;}
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:38px;
+  }
+  .nav-links a{
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--grey);
+    transition:color .2s;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--white);}
+  .nav-links a.active{color:var(--white);}
+
+  .nav-right{display:flex;align-items:center;gap:20px;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:var(--blue);
+    color:#fff;
+    box-shadow:0 0 0 0 rgba(59,99,255,0.5);
+  }
+  .btn-primary:hover{box-shadow:0 6px 24px rgba(59,99,255,0.45);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--white);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--blue-glow);color:var(--blue-glow);}
+  .btn-red{
+    background:var(--red);
+    color:#fff;
+  }
+  .btn-red:hover{box-shadow:0 6px 24px rgba(255,59,78,0.4);transform:translateY(-1px);}
+  .btn-sm{padding:9px 16px;font-size:13px;}
+
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .burger span{width:22px;height:2px;background:var(--white);display:block;transition:.25s;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:170px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute;
+    top:-200px;right:-150px;
+    width:700px;height:700px;
+    background:radial-gradient(circle, rgba(59,99,255,0.25), transparent 65%);
+    filter:blur(10px);
+    pointer-events:none;
+  }
+  .hero-glow.red{
+    top:150px;left:-250px;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(255,59,78,0.16), transparent 65%);
+    right:auto;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:40px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--blue-glow);
+    margin-bottom:26px;
+  }
+  .eyebrow .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 4px rgba(255,59,78,0.18);
+  }
+  .hero h1{
+    font-size:clamp(38px, 5vw, 60px);
+    max-width:600px;
+  }
+  .hero h1 .accent{color:var(--blue-glow);}
+  .hero h1 .accent-red{color:var(--red);}
+  .hero p.lead{
+    margin-top:22px;
+    font-size:18px;
+    color:var(--grey);
+    max-width:520px;
+  }
+  .hero-meta{
+    display:flex;
+    gap:26px;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  .hero-meta .item{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--grey);
+    font-size:13.5px;
+  }
+  .hero-meta svg{width:16px;height:16px;color:var(--blue-glow);}
+
+  /* hero signup card */
+  .signup-card{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:34px;
+    position:relative;
+    overflow:hidden;
+  }
+  .signup-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, var(--blue), var(--red));
+  }
+  .signup-card .sc-eyebrow{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:var(--grey-dim);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .signup-card .sc-icon{
+    width:44px;height:44px;
+    border-radius:12px;
+    background:var(--blue-deep);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue-glow);
+    margin-bottom:18px;
+  }
+  .signup-card .sc-icon svg{width:22px;height:22px;}
+  .signup-card h3{font-size:21px;margin-bottom:8px;}
+  .signup-card p{color:var(--grey);font-size:14.5px;margin-bottom:22px;}
+  .nl-form{
+    display:flex;
+    gap:10px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--line);
+    padding:6px;
+    border-radius:999px;
+  }
+  .nl-form input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:var(--white);
+    font-size:14.5px;
+    padding:12px 16px;
+    font-family:'Inter',sans-serif;
+    min-width:0;
+  }
+  .nl-form input::placeholder{color:var(--grey-dim);}
+  .nl-note{margin-top:14px;color:var(--grey-dim);font-size:12.5px;}
+  .nl-success{
+    display:none;
+    margin-top:14px;
+    color:var(--blue-glow);
+    font-size:13.5px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .sc-avatars{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:24px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+  }
+  .sc-avatar-stack{display:flex;}
+  .sc-avatar-stack span{
+    width:26px;height:26px;
+    border-radius:50%;
+    border:2px solid var(--black-card);
+    margin-left:-8px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:10px;
+    font-weight:700;
+    color:#fff;
+  }
+  .sc-avatar-stack span:first-child{margin-left:0;}
+  .sc-avatar-stack span:nth-child(1){background:var(--blue);}
+  .sc-avatar-stack span:nth-child(2){background:var(--red);}
+  .sc-avatar-stack span:nth-child(3){background:#4A7C59;}
+  .sc-avatar-stack span:nth-child(4){background:var(--grey-dim);}
+  .sc-avatars .txt{color:var(--grey);font-size:12.5px;}
+  .sc-avatars .txt b{color:var(--white);}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:34px 0;
+  }
+  .stats .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .stat{
+    text-align:center;
+    padding:0 10px;
+    border-left:1px solid var(--line);
+  }
+  .stat:first-child{border-left:none;}
+  .stat .num{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:32px;
+    font-weight:700;
+  }
+  .stat .num span{color:var(--red);}
+  .stat .label{
+    margin-top:4px;
+    color:var(--grey);
+    font-size:13px;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .sec-head{
+    max-width:620px;
+    margin-bottom:56px;
+  }
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .sec-head .eyebrow{margin-bottom:16px;}
+  .sec-head.center .eyebrow{justify-content:center;}
+  .sec-head h2{font-size:clamp(28px,3.6vw,42px);}
+  .sec-head p{color:var(--grey);margin-top:14px;font-size:16px;}
+
+  .section-pad{padding:110px 0;}
+
+  /* ---------- WHAT YOU GET GRID ---------- */
+  .get-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .get-card{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px;
+    transition:border-color .2s, transform .2s, background .2s;
+    position:relative;
+    overflow:hidden;
+  }
+  .get-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, var(--blue), var(--red));
+    opacity:0;
+    transition:opacity .2s;
+  }
+  .get-card:hover{
+    border-color:var(--grey-dim);
+    transform:translateY(-3px);
+    background:#191D27;
+  }
+  .get-card:hover::before{opacity:1;}
+  .get-icon{
+    width:42px;height:42px;
+    border-radius:11px;
+    background:var(--blue-deep);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue-glow);
+    margin-bottom:18px;
+  }
+  .get-icon svg{width:21px;height:21px;}
+  .get-card h3{font-size:17px;margin-bottom:8px;}
+  .get-card p{color:var(--grey);font-size:13.5px;line-height:1.6;}
+
+  /* ---------- ARCHIVE LIST ---------- */
+  .archive-list{
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .archive-row{
+    background:var(--black-soft);
+    padding:24px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    transition:background .2s;
+  }
+  .archive-row:hover{background:#171A22;}
+  .archive-left{display:flex;align-items:center;gap:20px;min-width:0;}
+  .archive-date{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--grey-dim);
+    border:1px solid var(--line);
+    padding:6px 11px;
+    border-radius:20px;
+    flex-shrink:0;
+    white-space:nowrap;
+  }
+  .archive-text h4{font-size:15.5px;margin-bottom:4px;}
+  .archive-text p{color:var(--grey);font-size:13.5px;margin:0;}
+  .archive-tag{
+    flex-shrink:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--blue-glow);
+    border:1px solid var(--blue-deep);
+    background:rgba(59,99,255,0.08);
+    padding:5px 10px;
+    border-radius:20px;
+  }
+  .archive-tag.red{color:var(--red);border-color:var(--red-deep);background:rgba(255,59,78,0.08);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .faq-item{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .faq-q{
+    padding:20px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    cursor:pointer;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:15.5px;
+  }
+  .faq-q .plus{
+    flex-shrink:0;
+    width:22px;height:22px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--grey);
+    transition:transform .25s, color .2s, border-color .2s;
+    font-size:14px;
+  }
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);color:var(--blue-glow);border-color:var(--blue-glow);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .faq-a p{
+    padding:0 24px 20px;
+    color:var(--grey);
+    font-size:14.5px;
+  }
+
+  /* ---------- BIG CTA ---------- */
+  .newsletter{
+    background:linear-gradient(135deg, var(--blue-deep) 0%, var(--black) 55%, var(--red-deep) 130%);
+    border-radius:20px;
+    padding:64px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .newsletter::after{
+    content:"";
+    position:absolute;
+    width:400px;height:400px;
+    right:-120px;top:-160px;
+    background:radial-gradient(circle, rgba(255,59,78,0.18), transparent 70%);
+  }
+  .nl-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .newsletter h2{font-size:clamp(26px,3.2vw,36px);}
+  .newsletter p{color:var(--grey);margin-top:12px;max-width:420px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:70px 0 30px;
+  }
+  .foot-top{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:50px;
+  }
+  .foot-brand p{color:var(--grey);font-size:14px;margin-top:16px;max-width:280px;}
+  .foot-social{display:flex;gap:10px;margin-top:24px;}
+  .foot-social a{
+    width:36px;height:36px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--grey);
+    transition:.2s;
+  }
+  .foot-social a:hover{color:var(--white);border-color:var(--blue-glow);}
+  .foot-social svg{width:16px;height:16px;}
+  .foot-col h5{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--grey-dim);
+    letter-spacing:0.08em;
+    margin-bottom:20px;
+  }
+  .foot-col ul{display:flex;flex-direction:column;gap:12px;}
+  .foot-col a{color:var(--grey);font-size:14px;transition:.2s;}
+  .foot-col a:hover{color:var(--white);}
+  .foot-bottom{
+    border-top:1px solid var(--line);
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .foot-bottom span{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal{display:flex;gap:22px;}
+  .foot-bottom .legal a{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal a:hover{color:var(--grey);}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .get-grid{grid-template-columns:repeat(2,1fr);}
+    .nl-inner{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+    .archive-row{flex-wrap:wrap;}
+  }
+  @media (max-width: 720px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .stat:nth-child(3){border-left:none;}
+    .get-grid{grid-template-columns:1fr;}
+    .newsletter{padding:36px 24px;}
+    .foot-top{grid-template-columns:1fr;gap:34px;}
+    .hero{padding:150px 0 60px;}
+    .section-pad{padding:60px 0;}
+    .signup-card{padding:26px;}
+    .archive-left{flex-direction:column;align-items:flex-start;gap:10px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* mobile nav panel */
+  .mobile-nav{
+    position:fixed;
+    top:76px;left:0;right:0;bottom:0;
+    background:var(--black);
+    z-index:90;
+    padding:30px 32px;
+    display:none;
+    flex-direction:column;
+    gap:26px;
+  }
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{font-size:20px;font-family:'Space Grotesk',sans-serif;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+        <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+      </svg>
+      OttLoop <span class="mk">TOOLS</span>
+    </a>
+    <nav class="nav-links">
+      <a href="all-tools.html">Tools</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#why">About</a>
+      <a href="newsletter.html" class="active">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="all-tools.html" class="btn btn-ghost btn-sm" style="display:inline-flex">Browse</a>
+      <a href="index.html#contact" class="btn btn-primary btn-sm">Get in touch</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="all-tools.html">Tools</a>
+    <a href="index.html#categories">Categories</a>
+    <a href="index.html#why">About</a>
+    <a href="newsletter.html">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow red"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow mono"><span class="dot"></span> tools.ottloop.com — newsletter</div>
+          <h1>Get every new tool <span class="accent">before</span> anyone <span class="accent-red">else does.</span></h1>
+          <p class="lead">One short email whenever a new OttLoop tool ships, or an existing one gets a meaningful upgrade. No fluff, no daily inbox noise — just the drops worth knowing about.</p>
+          <div class="hero-meta">
+            <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3Z"/><path d="m3 7 9 6 9-6"/></svg> One email per tool drop</div>
+            <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 6 6 18M6 6l12 12"/></svg> Zero spam, ever</div>
+            <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5Z"/></svg> Unsubscribe anytime</div>
+          </div>
+        </div>
+
+        <!-- signup card -->
+        <div class="signup-card reveal">
+          <div class="sc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18v12H3Z"/><path d="m3 7 9 6 9-6"/></svg>
+          </div>
+          <div class="sc-eyebrow"><span>●</span> Free, no catch</div>
+          <h3>Join the loop.</h3>
+          <p>Drop your email below. We'll send a note the moment something new ships — nothing more.</p>
+          <form class="nl-form" id="newsletterForm">
+            <input type="email" required placeholder="you@email.com" aria-label="Email address">
+            <button type="submit" class="btn btn-red btn-sm">Subscribe</button>
+          </form>
+          <div class="nl-note">One email per tool drop. Unsubscribe anytime, one click.</div>
+          <div class="nl-success" id="nlSuccess">✓ You're in the loop — check your inbox to confirm.</div>
+          <div class="sc-avatars">
+            <div class="sc-avatar-stack">
+              <span>JK</span><span>MR</span><span>AS</span><span>+</span>
+            </div>
+            <div class="txt">Growing alongside <b>every</b> new tool we ship</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats reveal">
+    <div class="wrap">
+      <div class="stat">
+        <div class="num">1<span>/drop</span></div>
+        <div class="label">Emails per tool shipped</div>
+      </div>
+      <div class="stat">
+        <div class="num">0</div>
+        <div class="label">Spam, promos, or filler</div>
+      </div>
+      <div class="stat">
+        <div class="num">210<span>+</span></div>
+        <div class="label">Tools already in the loop</div>
+      </div>
+      <div class="stat">
+        <div class="num">1<span>-click</span></div>
+        <div class="label">Unsubscribe, no questions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT YOU GET ================= -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> what's inside</div>
+        <h2>Four things, nothing else.</h2>
+        <p>We keep the newsletter narrow on purpose — every email earns its place in your inbox.</p>
+      </div>
+
+      <div class="get-grid">
+        <div class="get-card reveal">
+          <div class="get-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 5v6c0 6 3.4 9.4 8 11 4.6-1.6 8-5 8-11V5Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>New tool drops</h3>
+          <p>Get told the moment a new tool goes live — first access, before it's linked anywhere else on the site.</p>
+        </div>
+        <div class="get-card reveal">
+          <div class="get-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6Z"/></svg></div>
+          <h3>Meaningful upgrades</h3>
+          <p>When an existing tool gets a real improvement — not a typo fix — you'll hear about it once, briefly.</p>
+        </div>
+        <div class="get-card reveal">
+          <div class="get-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+          <h3>Occasional shortcuts</h3>
+          <p>Every so often, a workflow tip or keyboard shortcut for tools you already use — skippable, never required reading.</p>
+        </div>
+        <div class="get-card reveal">
+          <div class="get-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 2v4M17 2v4M3 10h18"/></svg></div>
+          <h3>Nothing else</h3>
+          <p>No sponsor slots, no "partner offers," no filler to hit a sending schedule. If there's nothing to say, we don't send.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARCHIVE ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> recent drops</div>
+        <h2>What subscribers have already seen.</h2>
+        <p>A running log of what's gone out so far — so you know exactly what you're signing up for.</p>
+      </div>
+
+      <div class="archive-list">
+        <div class="archive-row reveal">
+          <div class="archive-left">
+            <div class="archive-date">JUN 2026</div>
+            <div class="archive-text">
+              <h4>14 categories are officially live</h4>
+              <p>The full OttLoop directory opened up — 210 tools, organized and ready to use.</p>
+            </div>
+          </div>
+          <div class="archive-tag">Milestone</div>
+        </div>
+        <div class="archive-row reveal">
+          <div class="archive-left">
+            <div class="archive-date">MAY 2026</div>
+            <div class="archive-text">
+              <h4>Security &amp; Education tools added</h4>
+              <p>Password generators, hash tools, GPA and attendance calculators joined the loop.</p>
+            </div>
+          </div>
+          <div class="archive-tag red">New tools</div>
+        </div>
+        <div class="archive-row reveal">
+          <div class="archive-left">
+            <div class="archive-date">APR 2026</div>
+            <div class="archive-text">
+              <h4>Developer &amp; CSS tools shipped</h4>
+              <p>JSON formatting, regex testing, gradient and box-shadow generators — all client-side.</p>
+            </div>
+          </div>
+          <div class="archive-tag red">New tools</div>
+        </div>
+        <div class="archive-row reveal">
+          <div class="archive-left">
+            <div class="archive-date">MAR 2026</div>
+            <div class="archive-text">
+              <h4>OttLoop Tools opened its doors</h4>
+              <p>The first batch — Image and PDF tools — went live, along with this newsletter.</p>
+            </div>
+          </div>
+          <div class="archive-tag">Milestone</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> faq</div>
+        <h2>Before you sign up.</h2>
+      </div>
+
+      <div class="faq-list" style="max-width:760px;">
+        <div class="faq-item reveal">
+          <div class="faq-q"><span>How often will I actually hear from you?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>Only when there's a tool drop or a meaningful upgrade — usually a few times a month while the directory is still growing, less often once it settles.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q"><span>Will you sell or share my email?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>No. Your email is used only to send the newsletter. See our <a href="privacy-policy.html" style="color:var(--blue-glow);border-bottom:1px solid rgba(107,140,255,0.35);">Privacy Policy</a> for the full details.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q"><span>How do I unsubscribe?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>Every email has an unsubscribe link at the bottom — one click, no account, no "are you sure" maze.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q"><span>Can I suggest a tool through the newsletter?</span><span class="plus">+</span></div>
+          <div class="faq-a"><p>Just reply to any newsletter email, or use the <a href="index.html#contact" style="color:var(--blue-glow);border-bottom:1px solid rgba(107,140,255,0.35);">contact form</a> — tool requests shape what we build next.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIG CTA ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="newsletter reveal">
+        <div class="nl-inner">
+          <div>
+            <div class="eyebrow mono" style="margin-bottom:14px;"><span class="dot"></span> last call</div>
+            <h2>Ready to loop in?</h2>
+            <p>Drop your email once. We'll handle the rest — quietly, and only when it matters.</p>
+          </div>
+          <div>
+            <form class="nl-form" id="newsletterForm2">
+              <input type="email" required placeholder="you@email.com" aria-label="Email address">
+              <button type="submit" class="btn btn-red btn-sm">Subscribe</button>
+            </form>
+            <div class="nl-note">One email per tool drop. Unsubscribe anytime.</div>
+            <div class="nl-success" id="nlSuccess2">✓ You're in the loop — check your inbox to confirm.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="index.html#top" class="logo">
+          <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+            <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+          </svg>
+          OttLoop <span class="mk">TOOLS</span>
+        </a>
+        <p>A free, growing loop of 210 digital tools — image, PDF, text, dev, SEO and more, all in one place at tools.ottloop.com.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.9 3.7 11.5 11.5 0 0 1-8.4-4.3 4 4 0 0 0 1.3 5.4c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 0 0 3.2 4 4 4 0 0 1-1.8.1 4 4 0 0 0 3.8 2.8A8 8 0 0 1 2 18.6a11.3 11.3 0 0 0 6.3 1.9c7.5 0 11.7-6.4 11.7-11.9v-.5c.8-.6 1.5-1.3 2-2.2Z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1-1.5-1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9 9 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.9-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9Z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="all-tools.html#cat-image">Image Tools</a></li>
+          <li><a href="all-tools.html#cat-pdf">PDF Tools</a></li>
+          <li><a href="all-tools.html#cat-text">Text Tools</a></li>
+          <li><a href="all-tools.html#cat-developer">Developer Tools</a></li>
+          <li><a href="all-tools.html">View all →</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html#why">About</a></li>
+          <li><a href="newsletter.html">Newsletter</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="cookie-policy.html">Cookie policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 OttLoop. All rights reserved.</span>
+      <div class="legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if (isOpen) {
+        item.classList.remove('open');
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ---------- Google Sheet connection ----------
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFsTXVkaaMxq96M0PZzDM9vCdTdUPrUwkSposTB8N6synjwZ59l_5MU36j-DuOpDF79A/exec";
+
+  function sendToSheet(payload) {
+    return fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    });
+  }
+
+  function wireNewsletterForm(formId, successId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = e.target.querySelector('input[type="email"]');
+      const btn = e.target.querySelector('button');
+      const originalLabel = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending...';
+      try {
+        await sendToSheet({ formType: 'newsletter', email: emailInput.value });
+        document.getElementById(successId).style.display = 'block';
+        e.target.reset();
+      } catch (err) {
+        alert('Something went wrong. Please try again.');
+      } finally {
+        btn.disabled = false; btn.textContent = originalLabel;
+      }
+    });
+  }
+
+  wireNewsletterForm('newsletterForm', 'nlSuccess');
+  wireNewsletterForm('newsletterForm2', 'nlSuccess2');
+</script>
+
+</body>
+</html>
