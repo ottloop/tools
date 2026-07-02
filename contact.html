@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — OttLoop Tools</title>
+<meta name="description" content="Get in touch with OttLoop Tools. Request a new tool, report a bug, or ask a question about our 210+ free image, PDF, text, SEO and developer tools.">
+<meta name="keywords" content="contact ottloop, ottloop support, ottloop tools contact, request a tool, report a bug">
+<link rel="canonical" href="https://tools.ottloop.com/contact.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Us — OttLoop Tools">
+<meta property="og:description" content="Request a tool, report a bug, or say hello. We usually reply within 24 hours.">
+<meta property="og:url" content="https://tools.ottloop.com/contact.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact Us — OttLoop Tools">
+<meta name="twitter:description" content="Request a tool, report a bug, or say hello. We usually reply within 24 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact OttLoop Tools",
+  "description": "Get in touch with OttLoop Tools to request a tool, report a bug, or ask a question.",
+  "url": "https://tools.ottloop.com/contact.html"
+}
+</script>
+<style>
+  :root{
+    --black: #0A0C10;
+    --black-soft: #12151C;
+    --black-card: #171B24;
+    --line: #262B38;
+    --blue: #3B63FF;
+    --blue-deep: #16215C;
+    --blue-glow: #6B8CFF;
+    --red: #FF3B4E;
+    --red-deep: #4A0F17;
+    --white: #F4F5F9;
+    --grey: #8C93A8;
+    --grey-dim: #565E75;
+    --radius: 14px;
+    --max: 1200px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    line-height:1.1;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img,svg{display:block;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  section{position:relative;}
+
+  ::selection{background:var(--blue);color:var(--white);}
+
+  :focus-visible{
+    outline:2px solid var(--blue-glow);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- background texture ---------- */
+  .grain{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:0.035;
+    z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- NAVBAR ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(10,12,16,0.72);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .logo .mk{color:var(--grey);font-weight:500;font-size:11px;letter-spacing:0.08em;margin-left:2px;}
+  .logo-mark{width:30px;height:30px;flex-shrink:0;}
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:38px;
+  }
+  .nav-links a{
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--grey);
+    transition:color .2s;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--white);}
+  .nav-links a.active{color:var(--white);}
+
+  .nav-right{display:flex;align-items:center;gap:20px;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:var(--blue);
+    color:#fff;
+    box-shadow:0 0 0 0 rgba(59,99,255,0.5);
+  }
+  .btn-primary:hover{box-shadow:0 6px 24px rgba(59,99,255,0.45);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--white);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--blue-glow);color:var(--blue-glow);}
+  .btn-red{
+    background:var(--red);
+    color:#fff;
+  }
+  .btn-red:hover{box-shadow:0 6px 24px rgba(255,59,78,0.4);transform:translateY(-1px);}
+  .btn-sm{padding:9px 16px;font-size:13px;}
+
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .burger span{width:22px;height:2px;background:var(--white);display:block;transition:.25s;}
+
+  /* ---------- PAGE HERO ---------- */
+  .hero{
+    padding:170px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute;
+    top:-200px;right:-150px;
+    width:700px;height:700px;
+    background:radial-gradient(circle, rgba(59,99,255,0.25), transparent 65%);
+    filter:blur(10px);
+    pointer-events:none;
+  }
+  .hero-glow.red{
+    top:150px;left:-250px;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(255,59,78,0.16), transparent 65%);
+    right:auto;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--blue-glow);
+    margin-bottom:26px;
+  }
+  .eyebrow .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 4px rgba(255,59,78,0.18);
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 56px);
+    max-width:680px;
+  }
+  .hero h1 .accent{color:var(--blue-glow);}
+  .hero h1 .accent-red{color:var(--red);}
+  .hero p.lead{
+    margin-top:22px;
+    font-size:17px;
+    color:var(--grey);
+    max-width:560px;
+  }
+
+  .section-pad{padding:110px 0;}
+
+  /* ---------- QUICK CONTACT CARDS ---------- */
+  .quick-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .quick-card{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    transition:border-color .2s, transform .2s, background .2s;
+    position:relative;
+    overflow:hidden;
+  }
+  .quick-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, var(--blue), var(--red));
+    opacity:0;
+    transition:opacity .2s;
+  }
+  .quick-card:hover{border-color:var(--grey-dim);transform:translateY(-3px);background:#191D27;}
+  .quick-card:hover::before{opacity:1;}
+  .quick-card .ic{
+    width:42px;height:42px;
+    border-radius:11px;
+    background:var(--blue-deep);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue-glow);
+    margin-bottom:18px;
+  }
+  .quick-card .ic svg{width:21px;height:21px;}
+  .quick-card h4{font-size:17px;margin-bottom:8px;}
+  .quick-card p{color:var(--grey);font-size:14px;margin-bottom:14px;}
+  .quick-card a.quick-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:13.5px;
+    color:var(--blue-glow);
+    font-weight:500;
+  }
+  .quick-card a.quick-link svg{width:14px;height:14px;}
+
+  /* ---------- SECTION HEADS ---------- */
+  .sec-head{
+    max-width:620px;
+    margin-bottom:56px;
+  }
+  .sec-head .eyebrow{margin-bottom:16px;}
+  .sec-head h2{font-size:clamp(28px,3.6vw,42px);}
+  .sec-head p{color:var(--grey);margin-top:14px;font-size:16px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .faq-item{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:border-color .2s;
+  }
+  .faq-item.open{border-color:var(--grey-dim);}
+  .faq-q{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:22px 26px;
+    background:none;
+    border:none;
+    color:var(--white);
+    font-family:'Space Grotesk',sans-serif;
+    font-size:16px;
+    font-weight:600;
+    text-align:left;
+    cursor:pointer;
+  }
+  .faq-q .plus{
+    width:26px;height:26px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--blue-glow);
+    transition:transform .25s;
+  }
+  .faq-item.open .faq-q .plus{transform:rotate(135deg);border-color:var(--blue-glow);}
+  .faq-q .plus svg{width:13px;height:13px;}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  .faq-a p{color:var(--grey);font-size:14.5px;padding:0 26px 22px;}
+
+  /* ---------- CONTACT ================= -->*/
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:60px;
+  }
+  .contact-info h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:16px;}
+  .contact-info p{color:var(--grey);font-size:15.5px;max-width:400px;}
+  .contact-list{margin-top:36px;display:flex;flex-direction:column;gap:22px;}
+  .contact-list .row{display:flex;gap:14px;align-items:flex-start;}
+  .contact-list .ic{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--black-card);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--red);
+    flex-shrink:0;
+  }
+  .contact-list .ic svg{width:17px;height:17px;}
+  .contact-list .row h5{font-size:14.5px;font-weight:600;margin-bottom:3px;}
+  .contact-list .row span{color:var(--grey);font-size:13.5px;}
+
+  .form-card{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:36px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;
+    font-size:12.5px;
+    color:var(--grey);
+    margin-bottom:8px;
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.03em;
+  }
+  .field input, .field textarea, .field select{
+    width:100%;
+    background:var(--black-soft);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:12px 14px;
+    color:var(--white);
+    font-size:14.5px;
+    font-family:'Inter',sans-serif;
+    outline:none;
+    transition:border-color .2s;
+    resize:vertical;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{border-color:var(--blue-glow);}
+  .field textarea{min-height:110px;}
+  .form-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;flex-wrap:wrap;gap:14px;}
+  .form-success{display:none;color:var(--blue-glow);font-size:13px;font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- NEWSLETTER ---------- */
+  .newsletter{
+    background:linear-gradient(135deg, var(--blue-deep) 0%, var(--black) 55%, var(--red-deep) 130%);
+    border-radius:20px;
+    padding:64px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .newsletter::after{
+    content:"";
+    position:absolute;
+    width:400px;height:400px;
+    right:-120px;top:-160px;
+    background:radial-gradient(circle, rgba(255,59,78,0.18), transparent 70%);
+  }
+  .nl-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .newsletter h2{font-size:clamp(26px,3.2vw,36px);}
+  .newsletter p{color:var(--grey);margin-top:12px;max-width:420px;}
+  .nl-form{
+    display:flex;
+    gap:10px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--line);
+    padding:6px;
+    border-radius:999px;
+  }
+  .nl-form input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:var(--white);
+    font-size:14.5px;
+    padding:12px 16px;
+    font-family:'Inter',sans-serif;
+  }
+  .nl-form input::placeholder{color:var(--grey-dim);}
+  .nl-note{margin-top:12px;color:var(--grey-dim);font-size:12.5px;}
+  .nl-success{
+    display:none;
+    margin-top:14px;
+    color:var(--blue-glow);
+    font-size:13.5px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:70px 0 30px;
+  }
+  .foot-top{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:50px;
+  }
+  .foot-brand p{color:var(--grey);font-size:14px;margin-top:16px;max-width:280px;}
+  .foot-social{display:flex;gap:10px;margin-top:24px;}
+  .foot-social a{
+    width:36px;height:36px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--grey);
+    transition:.2s;
+  }
+  .foot-social a:hover{color:var(--white);border-color:var(--blue-glow);}
+  .foot-social svg{width:16px;height:16px;}
+  .foot-col h5{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--grey-dim);
+    letter-spacing:0.08em;
+    margin-bottom:20px;
+  }
+  .foot-col ul{display:flex;flex-direction:column;gap:12px;}
+  .foot-col a{color:var(--grey);font-size:14px;transition:.2s;}
+  .foot-col a:hover{color:var(--white);}
+  .foot-bottom{
+    border-top:1px solid var(--line);
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .foot-bottom span{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal{display:flex;gap:22px;}
+  .foot-bottom .legal a{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal a:hover{color:var(--grey);}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 980px){
+    .quick-grid{grid-template-columns:1fr;}
+    .nl-inner{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width: 720px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .newsletter{padding:36px 24px;}
+    .foot-top{grid-template-columns:1fr;gap:34px;}
+    .hero{padding:150px 0 50px;}
+    .form-card{padding:24px;}
+    .faq-q{padding:18px 20px;font-size:14.5px;}
+    .faq-a p{padding:0 20px 18px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* mobile nav panel */
+  .mobile-nav{
+    position:fixed;
+    top:76px;left:0;right:0;bottom:0;
+    background:var(--black);
+    z-index:90;
+    padding:30px 32px;
+    display:none;
+    flex-direction:column;
+    gap:26px;
+  }
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{font-size:20px;font-family:'Space Grotesk',sans-serif;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+        <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+      </svg>
+      OttLoop <span class="mk">TOOLS</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#tools">Tools</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="index.html#newsletter">Newsletter</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="categories.html" class="btn btn-ghost btn-sm" style="display:inline-flex">Browse</a>
+      <a href="#contact-form" class="btn btn-primary btn-sm">Get in touch</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#tools">Tools</a>
+    <a href="categories.html">Categories</a>
+    <a href="about.html">About</a>
+    <a href="index.html#newsletter">Newsletter</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow red"></div>
+    <div class="wrap">
+      <div class="eyebrow mono"><span class="dot"></span> get in touch</div>
+      <h1>Let's <span class="accent">close the loop.</span></h1>
+      <p class="lead">Missing tool? Found a bug? Just want to say hi? Every message reaches a real person — usually within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- ================= QUICK CONTACT ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="quick-grid">
+        <div class="quick-card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18v12H3Z"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <h4>Email us</h4>
+          <p>For anything — tool requests, bugs, partnerships, or feedback.</p>
+          <a href="mailto:hello@ottloop.com" class="quick-link">hello@ottloop.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="quick-card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 5-6 7 6 7M16 5l6 7-6 7M13 3l-2 18"/></svg></div>
+          <h4>Request a tool</h4>
+          <p>Tell us what's missing from the loop — your request can shape what ships next.</p>
+          <a href="#contact-form" class="quick-link">Use the form below <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="quick-card reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+          <h4>Response time</h4>
+          <p>We read every message. Most get a reply within 24 hours, often sooner.</p>
+          <span class="quick-link" style="color:var(--grey);">No auto-reply loop, promise</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> before you write in</div>
+        <h2>Quick answers, just in case.</h2>
+        <p>A few things people usually ask before reaching out.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q">Is OttLoop really free, no catch?
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Yes. Every tool on tools.ottloop.com is free to use, with no sign-up and no hidden premium tier. That's the whole point of the loop.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">Do I need to create an account?
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>No. Every tool works the moment you open it — no login, no email verification, nothing to set up.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">Are my files uploaded to your servers?
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Where a tool can run client-side, it does — your files stay on your device. If a specific tool needs server processing, that's noted on the tool's page.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">Can I suggest a new tool or category?
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Please do — the form below has a "Tool request" option, and requests directly shape what we build next.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q">I found a bug. What should I include in my report?
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-a"><p>The tool name, what you expected to happen, what happened instead, and your browser if relevant. Screenshots help a lot.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="section-pad" id="newsletter" style="padding-top:0;">
+    <div class="wrap">
+      <div class="newsletter reveal">
+        <div class="nl-inner">
+          <div>
+            <div class="eyebrow mono" style="margin-bottom:14px;"><span class="dot"></span> newsletter</div>
+            <h2>Stay in the loop.</h2>
+            <p>Get notified the moment a new tool ships — no spam, just tool drops and the occasional shortcut worth knowing about.</p>
+          </div>
+          <div>
+            <form class="nl-form" id="newsletterForm">
+              <input type="email" required placeholder="you@email.com" aria-label="Email address">
+              <button type="submit" class="btn btn-red btn-sm">Subscribe</button>
+            </form>
+            <div class="nl-note">One email per tool drop. Unsubscribe anytime.</div>
+            <div class="nl-success" id="nlSuccess">✓ You're in the loop — check your inbox to confirm.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT FORM ================= -->
+  <section class="section-pad" id="contact-form">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="eyebrow mono"><span class="dot"></span> contact</div>
+          <h2>Got a tool idea, or found a bug?</h2>
+          <p>Tell us what's missing from the loop. Every category on the site is still being built — your request can shape what ships next.</p>
+
+          <div class="contact-list">
+            <div class="row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18v12H3Z"/><path d="m3 7 9 6 9-6"/></svg></div>
+              <div><h5>Email</h5><span>hello@ottloop.com</span></div>
+            </div>
+            <div class="row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+              <div><h5>Response time</h5><span>Usually within 24 hours</span></div>
+            </div>
+            <div class="row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 5v6c0 6 3.4 9.4 8 11 4.6-1.6 8-5 8-11V5Z"/></svg></div>
+              <div><h5>Site</h5><span>tools.ottloop.com</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="field">
+                <label for="cName">Name</label>
+                <input id="cName" type="text" required placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="cEmail">Email</label>
+                <input id="cEmail" type="email" required placeholder="you@email.com">
+              </div>
+            </div>
+            <div class="field">
+              <label for="cSubject">Subject</label>
+              <select id="cSubject">
+                <option>Tool request</option>
+                <option>Bug report</option>
+                <option>Partnership</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cMsg">Message</label>
+              <textarea id="cMsg" required placeholder="Tell us what you need..."></textarea>
+            </div>
+            <div class="form-foot">
+              <button type="submit" class="btn btn-primary">Send message</button>
+              <span class="form-success" id="formSuccess">✓ Message sent — we'll get back to you soon.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+            <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+          </svg>
+          OttLoop <span class="mk">TOOLS</span>
+        </a>
+        <p>A free, growing loop of 200+ digital tools — image, PDF, text, dev, SEO and more, all in one place at tools.ottloop.com.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.9 3.7 11.5 11.5 0 0 1-8.4-4.3 4 4 0 0 0 1.3 5.4c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 0 0 3.2 4 4 4 0 0 1-1.8.1 4 4 0 0 0 3.8 2.8A8 8 0 0 1 2 18.6a11.3 11.3 0 0 0 6.3 1.9c7.5 0 11.7-6.4 11.7-11.9v-.5c.8-.6 1.5-1.3 2-2.2Z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1-1.5-1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9 9 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.9-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9Z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="categories.html#image-tools">Image Tools</a></li>
+          <li><a href="categories.html#pdf-tools">PDF Tools</a></li>
+          <li><a href="categories.html#text-tools">Text Tools</a></li>
+          <li><a href="categories.html#developer-tools">Developer Tools</a></li>
+          <li><a href="categories.html">View all →</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of use</a></li>
+          <li><a href="#">Cookie policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 OttLoop. All rights reserved.</span>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if (isOpen) {
+        item.classList.remove('open');
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ---------- Google Sheet connection ----------
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFsTXVkaaMxq96M0PZzDM9vCdTdUPrUwkSposTB8N6synjwZ59l_5MU36j-DuOpDF79A/exec";
+
+  function sendToSheet(payload) {
+    return fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    });
+  }
+
+  // newsletter form
+  document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const emailInput = e.target.querySelector('input[type="email"]');
+    const btn = e.target.querySelector('button');
+    const originalLabel = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      await sendToSheet({ formType: 'newsletter', email: emailInput.value });
+      document.getElementById('nlSuccess').style.display = 'block';
+      e.target.reset();
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      btn.disabled = false; btn.textContent = originalLabel;
+    }
+  });
+
+  // contact form
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalLabel = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      await sendToSheet({
+        formType: 'contact',
+        name: document.getElementById('cName').value,
+        email: document.getElementById('cEmail').value,
+        subject: document.getElementById('cSubject').value,
+        message: document.getElementById('cMsg').value
+      });
+      document.getElementById('formSuccess').style.display = 'inline';
+      e.target.reset();
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      btn.disabled = false; btn.textContent = originalLabel;
+    }
+  });
+</script>
+
+</body>
+</html>
