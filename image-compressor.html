@@ -331,8 +331,8 @@
     position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;
     border:1px solid var(--line);
   }
-  .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#05060a;}
-  .compare .after-wrap{position:absolute;inset:0;overflow:hidden;}
+  .compare-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#05060a;}
+  .compare-img.overlay{clip-path:inset(0 50% 0 0);}
   .compare-slider{position:absolute;inset:0;width:100%;-webkit-appearance:none;background:transparent;margin:0;height:100%;cursor:ew-resize;}
   .compare-slider::-webkit-slider-thumb{
     -webkit-appearance:none;width:34px;height:34px;border-radius:50%;
@@ -1337,7 +1337,7 @@
 
   browseBtn.addEventListener('click', () => fileInput.click());
   dropZone.addEventListener('click', () => fileInput.click());
-  dropZone.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') fileInput.click(); });
+  dropZone.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); } });
 
   ['dragenter','dragover'].forEach(evt => dropZone.addEventListener(evt, (e) => {
     e.preventDefault(); dropZone.classList.add('drag');
@@ -1362,6 +1362,7 @@
 
   function addFiles(files){
     files.forEach(file => {
+      if (!file.type.startsWith('image/')) return;
       const id = 'img_' + (idCounter++);
       const url = URL.createObjectURL(file);
       const img = new Image();
@@ -1375,6 +1376,10 @@
         if (!lastAspect) lastAspect = img.width / img.height;
         renderFileList();
         updateBatchInfo();
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        alert('Could not read "' + file.name + '" — the file may be corrupted or in an unsupported format.');
       };
       img.src = url;
     });
@@ -1410,12 +1415,10 @@
         <div class="compare">
           <span class="compare-badge left">ORIGINAL</span>
           <span class="compare-badge right">COMPRESSED</span>
-          <img src="${item.origUrl}" alt="Original ${item.name}">
-          <div class="after-wrap" style="width:${done ? 50 : 100}%;">
-            <img src="${done ? item.compUrl : item.origUrl}" alt="Compressed ${item.name}" style="width:${done ? (card.offsetWidth||600) + 'px' : '100%'};max-width:none;">
-          </div>
-          <div class="compare-line" style="left:${done ? 50 : 100}%;"></div>
-          <input type="range" class="compare-slider" min="0" max="100" value="${done ? 50 : 100}" data-id="${item.id}">
+          <img class="compare-img base" src="${done ? item.compUrl : item.origUrl}" alt="Compressed ${item.name}">
+          <img class="compare-img overlay" src="${item.origUrl}" alt="Original ${item.name}">
+          <div class="compare-line" style="left:50%;"></div>
+          <input type="range" class="compare-slider" min="0" max="100" value="50" data-id="${item.id}">
         </div>
         <div class="stats-row">
           <div class="stat-box"><div class="n">${fmtBytes(item.origSize)}</div><div class="l">Original</div></div>
@@ -1444,12 +1447,11 @@
     fileListEl.querySelectorAll('.compare-slider').forEach(slider => {
       slider.addEventListener('input', () => {
         const card = document.getElementById(slider.dataset.id);
-        const afterWrap = card.querySelector('.after-wrap');
+        const overlay = card.querySelector('.compare-img.overlay');
         const line = card.querySelector('.compare-line');
-        afterWrap.style.width = slider.value + '%';
-        line.style.left = slider.value + '%';
-        const img = afterWrap.querySelector('img');
-        img.style.width = card.querySelector('.compare').offsetWidth + 'px';
+        const v = slider.value;
+        overlay.style.clipPath = `inset(0 ${100 - v}% 0 0)`;
+        line.style.left = v + '%';
       });
     });
     fileListEl.querySelectorAll('.remove-btn').forEach(btn => {
@@ -1469,13 +1471,21 @@
       });
     });
     fileListEl.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         const it = items.find(i => i.id === btn.dataset.id);
         if (!it || !it.compBlob) return;
         const saved = Math.round((1 - it.compSize/it.origSize) * 100);
         const text = `${it.name}: ${fmtBytes(it.origSize)} → ${fmtBytes(it.compSize)} (saved ${saved}%), ${it.origW}x${it.origH}, ${extFromMime(it.compType).toUpperCase()}`;
-        navigator.clipboard?.writeText(text);
-        btn.textContent = ''; btn.append('✓ Copied');
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+            btn.textContent = ''; btn.append('✓ Copied');
+          } else {
+            alert(text);
+          }
+        } catch (err) {
+          alert(text);
+        }
         setTimeout(() => renderFileList(), 1200);
       });
     });
@@ -1483,57 +1493,80 @@
       btn.addEventListener('click', async () => {
         const it = items.find(i => i.id === btn.dataset.id);
         if (!it || !it.compBlob) return;
-        const file = new File([it.compBlob], it.name + '.' + extFromMime(it.compType), {type: it.compType});
-        if (navigator.share && navigator.canShare && navigator.canShare({files:[file]})) {
-          try { await navigator.share({files:[file], title: it.name}); } catch(e){}
-        } else {
-          navigator.clipboard?.writeText(it.compUrl);
+        try {
+          const file = new File([it.compBlob], it.name + '.' + extFromMime(it.compType), {type: it.compType});
+          if (navigator.share && navigator.canShare && navigator.canShare({files:[file]})) {
+            await navigator.share({files:[file], title: it.name});
+          } else if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(it.compUrl);
+            alert('Sharing is not supported on this browser — a temporary link was copied instead.');
+          } else {
+            alert('Sharing is not supported on this browser. Please use Download instead.');
+          }
+        } catch (err) {
+          if (err && err.name !== 'AbortError') console.error(err);
         }
       });
     });
   }
 
   function compressOne(item){
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       const img = new Image();
       img.onload = () => {
         let w = img.width, h = img.height;
-        if (resizeW.value) { w = parseInt(resizeW.value); h = lockAspect.checked ? Math.round(w / (img.width/img.height)) : (parseInt(resizeH.value) || h); }
-        else if (resizeH.value) { h = parseInt(resizeH.value); w = lockAspect.checked ? Math.round(h * (img.width/img.height)) : w; }
+        const rw = parseInt(resizeW.value, 10);
+        const rh = parseInt(resizeH.value, 10);
+        if (rw > 0) { w = rw; h = lockAspect.checked ? Math.round(w / (img.width/img.height)) : (rh > 0 ? rh : h); }
+        else if (rh > 0) { h = rh; w = lockAspect.checked ? Math.round(h * (img.width/img.height)) : w; }
+        w = Math.max(1, w); h = Math.max(1, h);
 
         const canvas = document.createElement('canvas');
         canvas.width = w; canvas.height = h;
         const ctx = canvas.getContext('2d');
-        if (!preserveAlpha.checked) { ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,w,h); }
-        ctx.drawImage(img, 0, 0, w, h);
 
         let outType = formatSelect.value === 'original' ? item.origType : formatSelect.value;
         if (!['image/jpeg','image/png','image/webp'].includes(outType)) outType = 'image/jpeg';
-        if (outType === 'image/jpeg') { /* no alpha */ }
 
-        const q = losslessMode.checked ? 1 : (qualitySlider.value / 100);
+        // JPEG has no alpha channel, so it always needs a solid background fill.
+        const needsFill = outType === 'image/jpeg' || !preserveAlpha.checked;
+        if (needsFill) { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); }
+        ctx.drawImage(img, 0, 0, w, h);
 
-        const runEncode = (quality) => new Promise(res => canvas.toBlob(b => res(b), outType, quality));
+        const q = losslessMode.checked ? 1 : (parseInt(qualitySlider.value, 10) / 100);
+
+        const runEncode = (quality) => new Promise((res) => {
+          canvas.toBlob((b) => {
+            if (b) { res(b); return; }
+            // Some browsers can't encode certain types (e.g. webp) — fall back to JPEG.
+            outType = 'image/jpeg';
+            canvas.toBlob((b2) => res(b2), 'image/jpeg', quality);
+          }, outType, quality);
+        });
 
         (async () => {
           let blob;
           const activeLevel = document.querySelector('.level-btn.active');
           if (activeLevel && activeLevel.dataset.q === 'smart' && outType !== 'image/png') {
-            // smart: binary-search-ish quality to target ~60% of original, floor at 40
+            // smart: step down quality until size drops under ~70% of original, floor at 0.4
             let quality = 0.8, best = await runEncode(quality);
             for (let i = 0; i < 3; i++) {
-              if (best.size > item.origSize * 0.7 && quality > 0.4) {
+              if (best && best.size > item.origSize * 0.7 && quality - 0.15 >= 0.4) {
                 quality -= 0.15;
                 best = await runEncode(quality);
+              } else {
+                break;
               }
             }
             blob = best;
           } else {
             blob = await runEncode(q);
           }
+          if (!blob) { reject(new Error('Encoding failed for ' + item.name)); return; }
           resolve({blob, w, h, type: outType});
         })();
       };
+      img.onerror = () => reject(new Error('Could not load ' + item.name));
       img.src = item.origUrl;
     });
   }
@@ -1542,23 +1575,33 @@
     if (items.length === 0) return;
     compressBtn.disabled = true;
     progressWrap.classList.add('show');
+    const failed = [];
     for (let i = 0; i < items.length; i++) {
-      progressBar.style.width = Math.round(((i)/items.length)*100) + '%';
-      const result = await compressOne(items[i]);
-      if (items[i].compUrl) URL.revokeObjectURL(items[i].compUrl);
-      items[i].compBlob = result.blob;
-      items[i].compUrl = URL.createObjectURL(result.blob);
-      items[i].compSize = result.blob.size;
-      items[i].compW = result.w; items[i].compH = result.h;
-      items[i].compType = result.type;
+      progressBar.style.width = Math.round((i / items.length) * 100) + '%';
+      try {
+        const result = await compressOne(items[i]);
+        if (items[i].compUrl) URL.revokeObjectURL(items[i].compUrl);
+        items[i].compBlob = result.blob;
+        items[i].compUrl = URL.createObjectURL(result.blob);
+        items[i].compSize = result.blob.size;
+        items[i].compW = result.w; items[i].compH = result.h;
+        items[i].compType = result.type;
+      } catch (err) {
+        console.error('Compression failed for', items[i].name, err);
+        failed.push(items[i].name);
+      }
     }
     progressBar.style.width = '100%';
     setTimeout(() => { progressWrap.classList.remove('show'); progressBar.style.width = '0%'; }, 500);
     compressBtn.disabled = false;
-    zipBtn.disabled = false;
-    againBtn.disabled = false;
+    const anyDone = items.some(i => i.compBlob);
+    zipBtn.disabled = !anyDone;
+    againBtn.disabled = !anyDone;
     renderFileList();
     updateTotals();
+    if (failed.length) {
+      alert('Could not compress: ' + failed.join(', ') + '. Try a different format or a smaller image.');
+    }
   });
 
   againBtn.addEventListener('click', () => compressBtn.click());
@@ -1577,15 +1620,34 @@
   zipBtn.addEventListener('click', async () => {
     const done = items.filter(i => i.compBlob);
     if (done.length === 0) return;
-    const zip = new JSZip();
-    done.forEach(it => {
-      zip.file(it.name + '-compressed.' + extFromMime(it.compType), it.compBlob);
-    });
-    const content = await zip.generateAsync({type:'blob'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(content);
-    a.download = 'ottloop-compressed-images.zip';
-    a.click();
+    zipBtn.disabled = true;
+    const originalLabel = zipBtn.textContent;
+    zipBtn.textContent = 'Zipping...';
+    try {
+      const zip = new JSZip();
+      const usedNames = {};
+      done.forEach(it => {
+        let base = it.name + '-compressed.' + extFromMime(it.compType);
+        if (usedNames[base] !== undefined) {
+          usedNames[base]++;
+          base = it.name + '-compressed-' + usedNames[base] + '.' + extFromMime(it.compType);
+        } else {
+          usedNames[base] = 0;
+        }
+        zip.file(base, it.compBlob);
+      });
+      const content = await zip.generateAsync({ type: 'blob' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(content);
+      a.download = 'ottloop-compressed-images.zip';
+      a.click();
+    } catch (err) {
+      console.error(err);
+      alert('Could not create the ZIP file. Please try downloading images individually.');
+    } finally {
+      zipBtn.disabled = false;
+      zipBtn.textContent = originalLabel;
+    }
   });
 
   clearBtn.addEventListener('click', () => {
