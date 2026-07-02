@@ -1182,7 +1182,7 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" onerror="var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js';document.head.appendChild(s);"></script>
 <script>
   /* ---------- mobile nav ---------- */
   const burger = document.getElementById('burgerBtn');
@@ -1307,6 +1307,38 @@
     return 'jpg';
   }
 
+  // Some browsers (Firefox, and Chrome in certain sandboxed/local-file contexts)
+  // won't reliably trigger a download from an <a> that was never attached to
+  // the page. Appending it, clicking, then removing it fixes that reliably.
+  function triggerDownload(url, filename){
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.rel = 'noopener';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { document.body.removeChild(a); }, 200);
+  }
+
+  // PNG is lossless by nature — canvas re-encoding alone rarely shrinks it.
+  // This reduces the number of distinct colors (per-channel posterization) so
+  // the browser's built-in lossless PNG compressor has far more repeated pixel
+  // values to work with, which measurably shrinks the file. Lower quality =
+  // fewer color levels = smaller file, same idea as JPG/WEBP quality.
+  function quantizeForPng(ctx, w, h, qualityPercent){
+    const levels = Math.max(6, Math.round(6 + (qualityPercent / 100) * 58)); // 6–64 levels/channel
+    const step = 255 / (levels - 1);
+    const imgData = ctx.getImageData(0, 0, w, h);
+    const d = imgData.data;
+    for (let i = 0; i < d.length; i += 4) {
+      d[i]   = Math.round(Math.round(d[i]   / step) * step);
+      d[i+1] = Math.round(Math.round(d[i+1] / step) * step);
+      d[i+2] = Math.round(Math.round(d[i+2] / step) * step);
+    }
+    ctx.putImageData(imgData, 0, 0);
+  }
+
   qualitySlider.addEventListener('input', () => {
     qualityVal.textContent = qualitySlider.value;
     levelBtns.forEach(b => b.classList.remove('active'));
@@ -1385,10 +1417,21 @@
     });
   }
 
+  // "Download ZIP" only makes sense for a batch — with a single image, each
+  // file card already has its own "Download" button in the selected format.
+  function updateZipVisibility(){
+    const show = items.length > 1;
+    zipBtn.style.display = show ? '' : 'none';
+    if (show) {
+      zipBtn.disabled = !items.some(i => i.compBlob);
+    }
+  }
+
   function updateBatchInfo(){
+    updateZipVisibility();
     if (items.length === 0){
       batchInfo.textContent = 'No images uploaded yet';
-      compressBtn.disabled = true; zipBtn.disabled = true; againBtn.disabled = true;
+      compressBtn.disabled = true; againBtn.disabled = true;
       batchBar.style.display = 'none';
       return;
     }
@@ -1464,10 +1507,7 @@
       btn.addEventListener('click', () => {
         const it = items.find(i => i.id === btn.dataset.id);
         if (!it || !it.compBlob) return;
-        const a = document.createElement('a');
-        a.href = it.compUrl;
-        a.download = it.name + '-compressed.' + extFromMime(it.compType);
-        a.click();
+        triggerDownload(it.compUrl, it.name + '-compressed.' + extFromMime(it.compType));
       });
     });
     fileListEl.querySelectorAll('.copy-btn').forEach(btn => {
@@ -1528,42 +1568,75 @@
         let outType = formatSelect.value === 'original' ? item.origType : formatSelect.value;
         if (!['image/jpeg','image/png','image/webp'].includes(outType)) outType = 'image/jpeg';
 
+        const resizeRequested = rw > 0 || rh > 0;
+        const formatChanged = formatSelect.value !== 'original';
+
         // JPEG has no alpha channel, so it always needs a solid background fill.
         const needsFill = outType === 'image/jpeg' || !preserveAlpha.checked;
-        if (needsFill) { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); }
-        ctx.drawImage(img, 0, 0, w, h);
+
+        // Redraws the source image fresh onto the canvas — needed before every
+        // encode attempt because PNG quantization mutates pixel data in place.
+        const drawBase = () => {
+          ctx.clearRect(0, 0, w, h);
+          if (needsFill) { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); }
+          ctx.drawImage(img, 0, 0, w, h);
+        };
+        drawBase();
 
         const q = losslessMode.checked ? 1 : (parseInt(qualitySlider.value, 10) / 100);
 
         const runEncode = (quality) => new Promise((res) => {
+          drawBase();
+          if (outType === 'image/png' && !losslessMode.checked) {
+            quantizeForPng(ctx, w, h, Math.round(quality * 100));
+          }
           canvas.toBlob((b) => {
             if (b) { res(b); return; }
             // Some browsers can't encode certain types (e.g. webp) — fall back to JPEG.
             outType = 'image/jpeg';
+            drawBase();
             canvas.toBlob((b2) => res(b2), 'image/jpeg', quality);
           }, outType, quality);
         });
 
         (async () => {
+          // Guarantees an actual size reduction (vs. the original file) by
+          // stepping quality down further if the first attempt doesn't shrink
+          // the file — for JPG/WEBP this lowers encoder quality, for PNG this
+          // reduces color levels (see quantizeForPng above).
+          const guardedEncode = async (startQuality) => {
+            let quality = startQuality;
+            let best = await runEncode(quality);
+            if (losslessMode.checked) return best;
+            let attempts = 0;
+            while (best && best.size >= item.origSize && quality > 0.15 && attempts < 8) {
+              quality = Math.max(0.15, quality - 0.12);
+              const smaller = await runEncode(quality);
+              if (smaller && (!best || smaller.size < best.size)) best = smaller;
+              attempts++;
+            }
+            return best;
+          };
+
           let blob;
           const activeLevel = document.querySelector('.level-btn.active');
-          if (activeLevel && activeLevel.dataset.q === 'smart' && outType !== 'image/png') {
-            // smart: step down quality until size drops under ~70% of original, floor at 0.4
-            let quality = 0.8, best = await runEncode(quality);
-            for (let i = 0; i < 3; i++) {
-              if (best && best.size > item.origSize * 0.7 && quality - 0.15 >= 0.4) {
-                quality -= 0.15;
-                best = await runEncode(quality);
-              } else {
-                break;
-              }
-            }
-            blob = best;
+          if (activeLevel && activeLevel.dataset.q === 'smart') {
+            blob = await guardedEncode(0.7);
           } else {
-            blob = await runEncode(q);
+            blob = await guardedEncode(q);
           }
           if (!blob) { reject(new Error('Encoding failed for ' + item.name)); return; }
-          resolve({blob, w, h, type: outType});
+
+          // Final safety net: if nothing was resized or converted, and every
+          // attempt still couldn't beat the original file, just keep the
+          // original bytes so the "compressed" file is never bigger.
+          let finalType = outType;
+          if (!resizeRequested && !formatChanged && blob.size >= item.origSize) {
+            blob = item.file;
+            finalType = item.origType;
+          }
+
+          resolve({blob, w, h, type: finalType});
         })();
       };
       img.onerror = () => reject(new Error('Could not load ' + item.name));
@@ -1595,7 +1668,7 @@
     setTimeout(() => { progressWrap.classList.remove('show'); progressBar.style.width = '0%'; }, 500);
     compressBtn.disabled = false;
     const anyDone = items.some(i => i.compBlob);
-    zipBtn.disabled = !anyDone;
+    updateZipVisibility();
     againBtn.disabled = !anyDone;
     renderFileList();
     updateTotals();
@@ -1620,13 +1693,33 @@
   zipBtn.addEventListener('click', async () => {
     const done = items.filter(i => i.compBlob);
     if (done.length === 0) return;
+
+    const runFallbackDownloads = () => {
+      alert('Could not build a ZIP file in this browser. Downloading images one by one instead.');
+      done.forEach((it, i) => {
+        setTimeout(() => {
+          triggerDownload(it.compUrl, it.name + '-compressed.' + extFromMime(it.compType));
+        }, i * 350);
+      });
+    };
+
+    // The fallback CDN script (if the primary one failed) loads asynchronously,
+    // so give it a brief moment before deciding JSZip truly isn't available.
+    if (typeof JSZip === 'undefined') {
+      await new Promise((r) => setTimeout(r, 800));
+    }
+    if (typeof JSZip === 'undefined') {
+      runFallbackDownloads();
+      return;
+    }
+
     zipBtn.disabled = true;
     const originalLabel = zipBtn.textContent;
     zipBtn.textContent = 'Zipping...';
     try {
       const zip = new JSZip();
       const usedNames = {};
-      done.forEach(it => {
+      for (const it of done) {
         let base = it.name + '-compressed.' + extFromMime(it.compType);
         if (usedNames[base] !== undefined) {
           usedNames[base]++;
@@ -1634,16 +1727,17 @@
         } else {
           usedNames[base] = 0;
         }
-        zip.file(base, it.compBlob);
-      });
+        // Converting to an ArrayBuffer first avoids Blob-handling quirks in
+        // some browser/JSZip combinations and is the most compatible input.
+        const buffer = await it.compBlob.arrayBuffer();
+        zip.file(base, buffer);
+      }
       const content = await zip.generateAsync({ type: 'blob' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(content);
-      a.download = 'ottloop-compressed-images.zip';
-      a.click();
+      if (!content || content.size === 0) throw new Error('Generated ZIP was empty');
+      triggerDownload(URL.createObjectURL(content), 'ottloop-compressed-images.zip');
     } catch (err) {
-      console.error(err);
-      alert('Could not create the ZIP file. Please try downloading images individually.');
+      console.error('ZIP generation failed:', err);
+      runFallbackDownloads();
     } finally {
       zipBtn.disabled = false;
       zipBtn.textContent = originalLabel;
