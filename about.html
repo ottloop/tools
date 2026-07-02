@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — OttLoop Tools | 200+ Free Online Tools</title>
+<meta name="description" content="Learn what OttLoop Tools is, why it exists, and how it keeps 210+ image, PDF, text, SEO, developer and calculator tools free and running in your browser — no sign-up, ever.">
+<meta name="keywords" content="about ottloop, ottloop tools, free online tools, who made ottloop, ottloop mission">
+<link rel="canonical" href="https://tools.ottloop.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About Us — OttLoop Tools">
+<meta property="og:description" content="Why OttLoop Tools exists and how it keeps 210+ free tools running with no sign-up and no cost.">
+<meta property="og:url" content="https://tools.ottloop.com/about.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us — OttLoop Tools">
+<meta name="twitter:description" content="Why OttLoop Tools exists and how it keeps 210+ free tools running with no sign-up and no cost.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About OttLoop Tools",
+  "description": "OttLoop Tools is a free toolbox of 210+ image, PDF, text, SEO, developer, CSS, calculator and utility tools. No sign-up. No cost.",
+  "url": "https://tools.ottloop.com/about.html"
+}
+</script>
+<style>
+  :root{
+    --black: #0A0C10;
+    --black-soft: #12151C;
+    --black-card: #171B24;
+    --line: #262B38;
+    --blue: #3B63FF;
+    --blue-deep: #16215C;
+    --blue-glow: #6B8CFF;
+    --red: #FF3B4E;
+    --red-deep: #4A0F17;
+    --white: #F4F5F9;
+    --grey: #8C93A8;
+    --grey-dim: #565E75;
+    --radius: 14px;
+    --max: 1200px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    line-height:1.1;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img,svg{display:block;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  section{position:relative;}
+
+  ::selection{background:var(--blue);color:var(--white);}
+
+  :focus-visible{
+    outline:2px solid var(--blue-glow);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- background texture ---------- */
+  .grain{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:0.035;
+    z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- NAVBAR ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(10,12,16,0.72);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .logo .mk{color:var(--grey);font-weight:500;font-size:11px;letter-spacing:0.08em;margin-left:2px;}
+  .logo-mark{width:30px;height:30px;flex-shrink:0;}
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:38px;
+  }
+  .nav-links a{
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--grey);
+    transition:color .2s;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--white);}
+  .nav-links a.active{color:var(--white);}
+
+  .nav-right{display:flex;align-items:center;gap:20px;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:var(--blue);
+    color:#fff;
+    box-shadow:0 0 0 0 rgba(59,99,255,0.5);
+  }
+  .btn-primary:hover{box-shadow:0 6px 24px rgba(59,99,255,0.45);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--white);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--blue-glow);color:var(--blue-glow);}
+  .btn-red{
+    background:var(--red);
+    color:#fff;
+  }
+  .btn-red:hover{box-shadow:0 6px 24px rgba(255,59,78,0.4);transform:translateY(-1px);}
+  .btn-sm{padding:9px 16px;font-size:13px;}
+
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .burger span{width:22px;height:2px;background:var(--white);display:block;transition:.25s;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:170px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute;
+    top:-200px;right:-150px;
+    width:700px;height:700px;
+    background:radial-gradient(circle, rgba(59,99,255,0.25), transparent 65%);
+    filter:blur(10px);
+    pointer-events:none;
+  }
+  .hero-glow.red{
+    top:150px;left:-250px;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(255,59,78,0.16), transparent 65%);
+    right:auto;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:40px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--blue-glow);
+    margin-bottom:26px;
+  }
+  .eyebrow .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 4px rgba(255,59,78,0.18);
+  }
+  .hero h1{
+    font-size:clamp(38px, 5.2vw, 64px);
+    max-width:640px;
+  }
+  .hero h1 .accent{color:var(--blue-glow);}
+  .hero h1 .accent-red{color:var(--red);}
+  .hero p.lead{
+    margin-top:24px;
+    font-size:18px;
+    color:var(--grey);
+    max-width:520px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  .hero-meta{
+    display:flex;
+    gap:26px;
+    margin-top:44px;
+    flex-wrap:wrap;
+  }
+  .hero-meta .item{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--grey);
+    font-size:13.5px;
+  }
+  .hero-meta svg{width:16px;height:16px;color:var(--blue-glow);}
+
+  /* loop visual */
+  .loop-visual{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .loop-visual svg{width:100%;height:100%;overflow:visible;}
+  .loop-node{
+    fill:var(--black-card);
+    stroke:var(--line);
+    stroke-width:1.5;
+  }
+  .loop-node-icon{color:var(--blue-glow);}
+  .loop-track{
+    fill:none;
+    stroke:var(--line);
+    stroke-width:1.4;
+  }
+  .loop-pulse{
+    fill:none;
+    stroke:url(#pulseGrad);
+    stroke-width:2.6;
+    stroke-linecap:round;
+    stroke-dasharray:14 900;
+    animation:travel 7s linear infinite;
+  }
+  @keyframes travel{
+    from{stroke-dashoffset:0;}
+    to{stroke-dashoffset:-900;}
+  }
+  .loop-center{
+    text-anchor:middle;
+  }
+  .loop-center .big{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    fill:var(--white);
+  }
+  .loop-center .small{
+    font-family:'IBM Plex Mono',monospace;
+    fill:var(--grey);
+    letter-spacing:1px;
+  }
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:34px 0;
+  }
+  .stats .wrap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .stat{
+    text-align:center;
+    padding:0 10px;
+    border-left:1px solid var(--line);
+  }
+  .stat:first-child{border-left:none;}
+  .stat .num{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:32px;
+    font-weight:700;
+  }
+  .stat .num span{color:var(--red);}
+  .stat .label{
+    margin-top:4px;
+    color:var(--grey);
+    font-size:13px;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .sec-head{
+    max-width:620px;
+    margin-bottom:56px;
+  }
+  .sec-head .eyebrow{margin-bottom:16px;}
+  .sec-head h2{font-size:clamp(28px,3.6vw,42px);}
+  .sec-head p{color:var(--grey);margin-top:14px;font-size:16px;}
+
+  .section-pad{padding:110px 0;}
+
+  /* ---------- MISSION / STORY (About-specific, additive) ---------- */
+  .mission-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .mission-copy p{color:var(--grey);font-size:16px;margin-bottom:18px;}
+  .mission-copy p:last-child{margin-bottom:0;}
+  .mission-copy strong{color:var(--white);font-weight:600;}
+  .mission-card{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:30px;
+  }
+  .mission-card h4{font-size:15px;margin-bottom:14px;color:var(--blue-glow);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.05em;font-weight:500;}
+  .mission-list{display:flex;flex-direction:column;gap:16px;}
+  .mission-list li{
+    display:flex;
+    gap:12px;
+    color:var(--grey);
+    font-size:14.5px;
+    align-items:flex-start;
+  }
+  .mission-list li svg{width:18px;height:18px;color:var(--red);flex-shrink:0;margin-top:1px;}
+
+  /* ---------- HOW IT WORKS (numbered process = real sequence) ---------- */
+  .steps-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .step-card{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    position:relative;
+    overflow:hidden;
+  }
+  .step-card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, var(--blue), var(--red));
+    opacity:0;
+    transition:opacity .2s;
+  }
+  .step-card:hover::before{opacity:1;}
+  .step-card .step-num{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:34px;
+    font-weight:700;
+    color:var(--grey-dim);
+    margin-bottom:16px;
+  }
+  .step-card h4{font-size:17px;margin-bottom:10px;}
+  .step-card p{color:var(--grey);font-size:14px;}
+
+  /* ---------- MINI CATEGORY STRIP ---------- */
+  .mini-cat-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+  }
+  .mini-cat{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px;
+    transition:border-color .2s, transform .2s, background .2s;
+  }
+  .mini-cat:hover{border-color:var(--grey-dim);transform:translateY(-2px);background:#191D27;}
+  .mini-cat h4{font-size:14px;margin-bottom:2px;}
+  .mini-cat span{color:var(--grey-dim);font-size:12px;font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- WHY STRIP ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .why-item{
+    background:var(--black-soft);
+    padding:34px 26px;
+  }
+  .why-item .num{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--grey-dim);
+    font-size:12px;
+    margin-bottom:18px;
+  }
+  .why-item h4{font-size:17px;margin-bottom:10px;}
+  .why-item p{color:var(--grey);font-size:14px;}
+
+  /* ---------- NEWSLETTER ---------- */
+  .newsletter{
+    background:linear-gradient(135deg, var(--blue-deep) 0%, var(--black) 55%, var(--red-deep) 130%);
+    border-radius:20px;
+    padding:64px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .newsletter::after{
+    content:"";
+    position:absolute;
+    width:400px;height:400px;
+    right:-120px;top:-160px;
+    background:radial-gradient(circle, rgba(255,59,78,0.18), transparent 70%);
+  }
+  .nl-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .newsletter h2{font-size:clamp(26px,3.2vw,36px);}
+  .newsletter p{color:var(--grey);margin-top:12px;max-width:420px;}
+  .nl-form{
+    display:flex;
+    gap:10px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--line);
+    padding:6px;
+    border-radius:999px;
+  }
+  .nl-form input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:var(--white);
+    font-size:14.5px;
+    padding:12px 16px;
+    font-family:'Inter',sans-serif;
+  }
+  .nl-form input::placeholder{color:var(--grey-dim);}
+  .nl-note{margin-top:12px;color:var(--grey-dim);font-size:12.5px;}
+  .nl-success{
+    display:none;
+    margin-top:14px;
+    color:var(--blue-glow);
+    font-size:13.5px;
+    font-family:'IBM Plex Mono',monospace;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:60px;
+  }
+  .contact-info h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:16px;}
+  .contact-info p{color:var(--grey);font-size:15.5px;max-width:400px;}
+  .contact-list{margin-top:36px;display:flex;flex-direction:column;gap:22px;}
+  .contact-list .row{display:flex;gap:14px;align-items:flex-start;}
+  .contact-list .ic{
+    width:38px;height:38px;border-radius:10px;
+    background:var(--black-card);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--red);
+    flex-shrink:0;
+  }
+  .contact-list .ic svg{width:17px;height:17px;}
+  .contact-list .row h5{font-size:14.5px;font-weight:600;margin-bottom:3px;}
+  .contact-list .row span{color:var(--grey);font-size:13.5px;}
+
+  .form-card{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:36px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;
+    font-size:12.5px;
+    color:var(--grey);
+    margin-bottom:8px;
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.03em;
+  }
+  .field input, .field textarea, .field select{
+    width:100%;
+    background:var(--black-soft);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:12px 14px;
+    color:var(--white);
+    font-size:14.5px;
+    font-family:'Inter',sans-serif;
+    outline:none;
+    transition:border-color .2s;
+    resize:vertical;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{border-color:var(--blue-glow);}
+  .field textarea{min-height:110px;}
+  .form-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;flex-wrap:wrap;gap:14px;}
+  .form-success{display:none;color:var(--blue-glow);font-size:13px;font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:70px 0 30px;
+  }
+  .foot-top{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:50px;
+  }
+  .foot-brand p{color:var(--grey);font-size:14px;margin-top:16px;max-width:280px;}
+  .foot-social{display:flex;gap:10px;margin-top:24px;}
+  .foot-social a{
+    width:36px;height:36px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--grey);
+    transition:.2s;
+  }
+  .foot-social a:hover{color:var(--white);border-color:var(--blue-glow);}
+  .foot-social svg{width:16px;height:16px;}
+  .foot-col h5{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--grey-dim);
+    letter-spacing:0.08em;
+    margin-bottom:20px;
+  }
+  .foot-col ul{display:flex;flex-direction:column;gap:12px;}
+  .foot-col a{color:var(--grey);font-size:14px;transition:.2s;}
+  .foot-col a:hover{color:var(--white);}
+  .foot-bottom{
+    border-top:1px solid var(--line);
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .foot-bottom span{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal{display:flex;gap:22px;}
+  .foot-bottom .legal a{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal a:hover{color:var(--grey);}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .loop-visual{margin-top:20px;max-width:360px;}
+    .mission-grid{grid-template-columns:1fr;}
+    .steps-grid{grid-template-columns:1fr;}
+    .mini-cat-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .nl-inner{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width: 720px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+    .stat:nth-child(3){border-left:none;}
+    .mini-cat-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .newsletter{padding:36px 24px;}
+    .foot-top{grid-template-columns:1fr;gap:34px;}
+    .hero{padding:150px 0 70px;}
+    .form-card{padding:24px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* mobile nav panel */
+  .mobile-nav{
+    position:fixed;
+    top:76px;left:0;right:0;bottom:0;
+    background:var(--black);
+    z-index:90;
+    padding:30px 32px;
+    display:none;
+    flex-direction:column;
+    gap:26px;
+  }
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{font-size:20px;font-family:'Space Grotesk',sans-serif;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+        <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+      </svg>
+      OttLoop <span class="mk">TOOLS</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#tools">Tools</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#newsletter">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="categories.html" class="btn btn-ghost btn-sm" style="display:inline-flex">Browse</a>
+      <a href="index.html#contact" class="btn btn-primary btn-sm">Get in touch</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#tools">Tools</a>
+    <a href="categories.html">Categories</a>
+    <a href="about.html">About</a>
+    <a href="index.html#newsletter">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow red"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow mono"><span class="dot"></span> about ottloop tools</div>
+          <h1>One loop. <span class="accent">210+ tools.</span> <span class="accent-red">Zero friction.</span></h1>
+          <p class="lead">OttLoop Tools started as a simple idea: the internet has a free tool for almost everything, but finding it usually means wading through pop-ups, fake download buttons, and forced sign-ups. We're building the one address that skips all of that.</p>
+          <div class="hero-cta">
+            <a href="categories.html" class="btn btn-primary">Browse the tools</a>
+            <a href="index.html#contact" class="btn btn-ghost">Talk to us →</a>
+          </div>
+          <div class="hero-meta">
+            <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/></svg> No sign-up required</div>
+            <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Runs in your browser</div>
+            <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7l-9-5Z"/></svg> Always free</div>
+          </div>
+        </div>
+
+        <!-- loop visual -->
+        <div class="loop-visual">
+          <svg viewBox="0 0 480 480">
+            <defs>
+              <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FF3B4E"/>
+                <stop offset="100%" stop-color="#6B8CFF"/>
+              </linearGradient>
+            </defs>
+            <circle class="loop-track" cx="240" cy="240" r="170"/>
+            <circle class="loop-pulse" cx="240" cy="240" r="170" transform="rotate(-90 240 240)"/>
+
+            <text x="240" y="232" class="loop-center big" font-size="30">OttLoop</text>
+            <text x="240" y="256" class="loop-center small" font-size="12">200+ TOOLS · 14 CATEGORIES</text>
+
+            <g transform="translate(240,52)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-11,-11)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <rect x="1" y="1" width="20" height="20" rx="3"/><circle cx="7.5" cy="7.5" r="1.7"/><path d="m2 16 5-5 4 4 4-5 5 6"/>
+              </g>
+            </g>
+            <g transform="translate(360,92)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-10,-11)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <path d="M4 1h9l6 6v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z"/><path d="M13 1v6h6"/><path d="M6 15h9M6 18h6"/>
+              </g>
+            </g>
+            <g transform="translate(428,240)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-11,-9)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <path d="M7 4 1 10l6 6M15 4l6 6-6 6M13 2 9 20"/>
+              </g>
+            </g>
+            <g transform="translate(360,388)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-9,-11)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <rect x="1" y="1" width="16" height="20" rx="2"/><path d="M5 6h8M5 11h2M9.5 11h2M14 11h0M5 15h2M9.5 15h2M14 15h0M5 19h2M9.5 19h2"/>
+              </g>
+            </g>
+            <g transform="translate(240,428)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-10,-10)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <circle cx="8" cy="8" r="7"/><path d="m18 18-4.3-4.3"/>
+              </g>
+            </g>
+            <g transform="translate(120,388)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-8,-11)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <path d="M8 1 1 4v6c0 6 3.4 8.7 7 10 3.6-1.3 7-4 7-10V4L8 1Z"/><path d="M4.8 8.2 7 10.4l4.2-4.4"/>
+              </g>
+            </g>
+            <g transform="translate(52,240)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-9,-10)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <path d="M2 4h14M2 9h14M2 14h9"/>
+              </g>
+            </g>
+            <g transform="translate(120,92)">
+              <circle class="loop-node" r="26"/>
+              <g class="loop-node-icon" transform="translate(-9,-11)" stroke="currentColor" fill="none" stroke-width="1.7">
+                <path d="M1 1h16l-1.5 17L9 20l-6.5-2Z"/><path d="M5 6h8l-.4 4.5H6.4M5.4 10.5l.4 5L9 16.2l3.2-.8.3-3.4"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats reveal">
+    <div class="wrap">
+      <div class="stat">
+        <div class="num">210<span>+</span></div>
+        <div class="label">Tools in the loop</div>
+      </div>
+      <div class="stat">
+        <div class="num">14</div>
+        <div class="label">Categories covered</div>
+      </div>
+      <div class="stat">
+        <div class="num">$0</div>
+        <div class="label">Cost, always</div>
+      </div>
+      <div class="stat">
+        <div class="num">24<span>/7</span></div>
+        <div class="label">Available, no queue</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MISSION / STORY ================= -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> our story</div>
+        <h2>Why we built OttLoop.</h2>
+      </div>
+      <div class="mission-grid">
+        <div class="mission-copy reveal">
+          <p>Most "free tool" sites online aren't really free — they bury the actual tool behind ads, countdown timers, or an account wall three clicks in. We got tired of that loop, so we built our own: one place, no detours, the tool does the thing you came for.</p>
+          <p>OttLoop is being built one category at a time — <strong>Image, PDF, Text, Conversion, SEO, Developer, CSS, Calculator, Date &amp; Time, Social Media, YouTube, E-commerce, Security and Education</strong> — with the goal of covering the everyday utilities people reach for most, without the noise around them.</p>
+          <p>Where a tool can run entirely in your browser, it does. That means your files aren't uploaded to a server just to get compressed or converted — they stay on your device, and the tool still gets the job done.</p>
+        </div>
+        <div class="mission-card reveal">
+          <h4>What guides the build</h4>
+          <ul class="mission-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Every tool stays free — no premium tier hiding the real feature.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> No account required to use a single tool on the site.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Client-side first — your files don't leave your device unless they have to.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> New tools ship based on what people actually ask for.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> how it works</div>
+        <h2>Three steps. That's the whole process.</h2>
+        <p>No tutorial needed — OttLoop is built so the shortest path is the only path.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h4>Pick a category</h4>
+          <p>Head to the categories page and find the group your task falls under — Image, PDF, Text, Dev and 10 more.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <h4>Open the tool</h4>
+          <p>Click through — no account, no install, no waiting room. The tool loads and you're already using it.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <h4>Get it done, close the tab</h4>
+          <p>Do the thing you came for and leave. No upsell, no "create a free account to save your progress."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHAT WE COVER ================= -->
+  <section class="section-pad" style="padding-top:0;" id="categories">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> what we cover</div>
+        <h2>14 categories, still growing.</h2>
+        <p>Every category below is actively being built out with new tools. See the full directory on the <a href="categories.html" style="color:var(--blue-glow);">categories page</a>.</p>
+      </div>
+      <div class="mini-cat-grid">
+        <a href="categories.html#image-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="3"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="m3 17 5.5-5.5 4 4L18 10l3 3"/></svg></div>
+          <div>
+            <h4>Image Tools</h4>
+            <span>25 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#pdf-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 2h9l5 5v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"/><path d="M15 2v5h5"/><path d="M8 13h8M8 17h5"/></svg></div>
+          <div>
+            <h4>PDF Tools</h4>
+            <span>20 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#text-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div>
+          <div>
+            <h4>Text Tools</h4>
+            <span>20 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#conversion-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 9V6a2 2 0 0 1 2-2h3M20 9V6a2 2 0 0 0-2-2h-3M4 15v3a2 2 0 0 0 2 2h3M20 15v3a2 2 0 0 1-2 2h-3"/><path d="M9 12h6M13 9l3 3-3 3"/></svg></div>
+          <div>
+            <h4>Conversion Tools</h4>
+            <span>15 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#seo-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10" cy="10" r="7"/><path d="m20 20-4.3-4.3"/></svg></div>
+          <div>
+            <h4>SEO Tools</h4>
+            <span>20 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#developer-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 5-6 7 6 7M16 5l6 7-6 7M13 3l-2 18"/></svg></div>
+          <div>
+            <h4>Developer Tools</h4>
+            <span>20 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#css-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 2h18l-1.6 18L11 22l-6.4-2Z"/><path d="M6 6.5h10l-.4 4.7H7M6.4 11.2l.5 5.4L11 18l3.6-1.4.4-3.4"/></svg></div>
+          <div>
+            <h4>CSS Tools</h4>
+            <span>15 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#calculator-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="2" width="18" height="20" rx="2"/><path d="M7 7h10M7 11h2.2M11.9 11h2.2M16.8 11h0M7 15h2.2M11.9 15h2.2M16.8 15h0M7 19h2.2M11.9 19h2.2"/></svg></div>
+          <div>
+            <h4>Calculator Tools</h4>
+            <span>15 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#date-and-time-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg></div>
+          <div>
+            <h4>Date & Time Tools</h4>
+            <span>10 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#social-media-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h13l3 4-3 4H4l3-4Z"/><circle cx="7" cy="18" r="1.6"/><circle cx="16" cy="18" r="1.6"/><path d="M9 18h5"/></svg></div>
+          <div>
+            <h4>Social Media Tools</h4>
+            <span>10 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#youtube-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/></svg></div>
+          <div>
+            <h4>YouTube Tools</h4>
+            <span>10 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#e-commerce-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 7H6"/><circle cx="9" cy="21" r="1.4"/><circle cx="17" cy="21" r="1.4"/></svg></div>
+          <div>
+            <h4>E-commerce Tools</h4>
+            <span>10 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#security-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 5v6c0 6 3.4 9.4 8 11 4.6-1.6 8-5 8-11V5Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div>
+            <h4>Security Tools</h4>
+            <span>10 tools</span>
+          </div>
+        </a>
+        <a href="categories.html#education-tools" class="mini-cat reveal">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 8 12 3l10 5-10 5Z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5M22 8v6"/></svg></div>
+          <div>
+            <h4>Education Tools</h4>
+            <span>10 tools</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY ================= -->
+  <section class="section-pad" id="why" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow mono"><span class="dot"></span> why ottloop</div>
+        <h2>Built to close the loop, not open a new tab.</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <div class="num">01</div>
+          <h4>One address, every tool</h4>
+          <p>tools.ottloop.com holds all 14 categories — no bouncing between sketchy sites for one conversion.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">02</div>
+          <h4>Nothing to install</h4>
+          <p>Every tool runs straight in your browser. Open it, use it, close the tab.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">03</div>
+          <h4>Free, permanently</h4>
+          <p>No trial windows, no locked features, no card on file. That's the loop we're committed to.</p>
+        </div>
+        <div class="why-item">
+          <div class="num">04</div>
+          <h4>Privacy-first by default</h4>
+          <p>Where a tool can run client-side, it does — your files stay on your device, not our servers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="section-pad" id="newsletter" style="padding-top:0;">
+    <div class="wrap">
+      <div class="newsletter reveal">
+        <div class="nl-inner">
+          <div>
+            <div class="eyebrow mono" style="margin-bottom:14px;"><span class="dot"></span> newsletter</div>
+            <h2>Stay in the loop.</h2>
+            <p>Get notified the moment a new tool ships — no spam, just tool drops and the occasional shortcut worth knowing about.</p>
+          </div>
+          <div>
+            <form class="nl-form" id="newsletterForm">
+              <input type="email" required placeholder="you@email.com" aria-label="Email address">
+              <button type="submit" class="btn btn-red btn-sm">Subscribe</button>
+            </form>
+            <div class="nl-note">One email per tool drop. Unsubscribe anytime.</div>
+            <div class="nl-success" id="nlSuccess">✓ You're in the loop — check your inbox to confirm.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section-pad" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="eyebrow mono"><span class="dot"></span> contact</div>
+          <h2>Got a tool idea, or found a bug?</h2>
+          <p>Tell us what's missing from the loop. Every category above is still being built — your request can shape what ships next.</p>
+
+          <div class="contact-list">
+            <div class="row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18v12H3Z"/><path d="m3 7 9 6 9-6"/></svg></div>
+              <div><h5>Email</h5><span>hello@ottloop.com</span></div>
+            </div>
+            <div class="row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+              <div><h5>Response time</h5><span>Usually within 24 hours</span></div>
+            </div>
+            <div class="row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 4 5v6c0 6 3.4 9.4 8 11 4.6-1.6 8-5 8-11V5Z"/></svg></div>
+              <div><h5>Site</h5><span>tools.ottloop.com</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="field">
+                <label for="cName">Name</label>
+                <input id="cName" type="text" required placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="cEmail">Email</label>
+                <input id="cEmail" type="email" required placeholder="you@email.com">
+              </div>
+            </div>
+            <div class="field">
+              <label for="cSubject">Subject</label>
+              <select id="cSubject">
+                <option>Tool request</option>
+                <option>Bug report</option>
+                <option>Partnership</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cMsg">Message</label>
+              <textarea id="cMsg" required placeholder="Tell us what you need..."></textarea>
+            </div>
+            <div class="form-foot">
+              <button type="submit" class="btn btn-primary">Send message</button>
+              <span class="form-success" id="formSuccess">✓ Message sent — we'll get back to you soon.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="index.html" class="logo">
+          <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+            <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+          </svg>
+          OttLoop <span class="mk">TOOLS</span>
+        </a>
+        <p>A free, growing loop of 200+ digital tools — image, PDF, text, dev, SEO and more, all in one place at tools.ottloop.com.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.9 3.7 11.5 11.5 0 0 1-8.4-4.3 4 4 0 0 0 1.3 5.4c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 0 0 3.2 4 4 4 0 0 1-1.8.1 4 4 0 0 0 3.8 2.8A8 8 0 0 1 2 18.6a11.3 11.3 0 0 0 6.3 1.9c7.5 0 11.7-6.4 11.7-11.9v-.5c.8-.6 1.5-1.3 2-2.2Z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1-1.5-1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9 9 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.9-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9Z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="categories.html#image-tools">Image Tools</a></li>
+          <li><a href="categories.html#pdf-tools">PDF Tools</a></li>
+          <li><a href="categories.html#text-tools">Text Tools</a></li>
+          <li><a href="categories.html#developer-tools">Developer Tools</a></li>
+          <li><a href="categories.html">View all →</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Cookie policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 OttLoop. All rights reserved.</span>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ---------- Google Sheet connection ----------
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFsTXVkaaMxq96M0PZzDM9vCdTdUPrUwkSposTB8N6synjwZ59l_5MU36j-DuOpDF79A/exec";
+
+  function sendToSheet(payload) {
+    return fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    });
+  }
+
+  // newsletter form
+  document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const emailInput = e.target.querySelector('input[type="email"]');
+    const btn = e.target.querySelector('button');
+    const originalLabel = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      await sendToSheet({ formType: 'newsletter', email: emailInput.value });
+      document.getElementById('nlSuccess').style.display = 'block';
+      e.target.reset();
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      btn.disabled = false; btn.textContent = originalLabel;
+    }
+  });
+
+  // contact form
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalLabel = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      await sendToSheet({
+        formType: 'contact',
+        name: document.getElementById('cName').value,
+        email: document.getElementById('cEmail').value,
+        subject: document.getElementById('cSubject').value,
+        message: document.getElementById('cMsg').value
+      });
+      document.getElementById('formSuccess').style.display = 'inline';
+      e.target.reset();
+    } catch (err) {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      btn.disabled = false; btn.textContent = originalLabel;
+    }
+  });
+</script>
+
+</body>
+</html>
