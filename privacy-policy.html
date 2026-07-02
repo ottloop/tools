@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | OttLoop Tools</title>
+<meta name="description" content="Read the OttLoop Tools privacy policy — what data we collect, how client-side tools handle your files, cookies, third-party services, and your rights.">
+<link rel="canonical" href="https://tools.ottloop.com/privacy-policy.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OttLoop Tools">
+<meta property="og:title" content="Privacy Policy | OttLoop Tools">
+<meta property="og:description" content="What data we collect, how client-side tools handle your files, cookies, third-party services, and your rights.">
+<meta property="og:url" content="https://tools.ottloop.com/privacy-policy.html">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Privacy Policy | OttLoop Tools">
+<meta name="twitter:description" content="What data we collect, how client-side tools handle your files, cookies, third-party services, and your rights.">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --black: #0A0C10;
+    --black-soft: #12151C;
+    --black-card: #171B24;
+    --line: #262B38;
+    --blue: #3B63FF;
+    --blue-deep: #16215C;
+    --blue-glow: #6B8CFF;
+    --red: #FF3B4E;
+    --red-deep: #4A0F17;
+    --white: #F4F5F9;
+    --grey: #8C93A8;
+    --grey-dim: #565E75;
+    --radius: 14px;
+    --max: 1200px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    letter-spacing:-0.02em;
+    line-height:1.1;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:12px;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img,svg{display:block;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  section{position:relative;}
+
+  ::selection{background:var(--blue);color:var(--white);}
+
+  :focus-visible{
+    outline:2px solid var(--blue-glow);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- background texture ---------- */
+  .grain{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:0.035;
+    z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- NAVBAR ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(10,12,16,0.72);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-0.01em;
+  }
+  .logo .mk{color:var(--grey);font-weight:500;font-size:11px;letter-spacing:0.08em;margin-left:2px;}
+  .logo-mark{width:30px;height:30px;flex-shrink:0;}
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:38px;
+  }
+  .nav-links a{
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--grey);
+    transition:color .2s;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--white);}
+
+  .nav-right{display:flex;align-items:center;gap:20px;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{
+    background:var(--blue);
+    color:#fff;
+    box-shadow:0 0 0 0 rgba(59,99,255,0.5);
+  }
+  .btn-primary:hover{box-shadow:0 6px 24px rgba(59,99,255,0.45);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--white);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--blue-glow);color:var(--blue-glow);}
+  .btn-red{
+    background:var(--red);
+    color:#fff;
+  }
+  .btn-red:hover{box-shadow:0 6px 24px rgba(255,59,78,0.4);transform:translateY(-1px);}
+  .btn-sm{padding:9px 16px;font-size:13px;}
+
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .burger span{width:22px;height:2px;background:var(--white);display:block;transition:.25s;}
+
+  /* ---------- PAGE HERO ---------- */
+  .hero{
+    padding:170px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-glow{
+    position:absolute;
+    top:-200px;right:-150px;
+    width:700px;height:700px;
+    background:radial-gradient(circle, rgba(59,99,255,0.25), transparent 65%);
+    filter:blur(10px);
+    pointer-events:none;
+  }
+  .hero-glow.red{
+    top:150px;left:-250px;
+    width:600px;height:600px;
+    background:radial-gradient(circle, rgba(255,59,78,0.16), transparent 65%);
+    right:auto;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--blue-glow);
+    margin-bottom:26px;
+  }
+  .eyebrow .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 4px rgba(255,59,78,0.18);
+  }
+  .hero h1{
+    font-size:clamp(36px, 5vw, 58px);
+    max-width:700px;
+  }
+  .hero h1 .accent{color:var(--blue-glow);}
+  .hero p.lead{
+    margin-top:22px;
+    font-size:17px;
+    color:var(--grey);
+    max-width:600px;
+  }
+  .hero-updated{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    margin-top:24px;
+    color:var(--grey-dim);
+    font-size:13px;
+    font-family:'IBM Plex Mono',monospace;
+    border:1px solid var(--line);
+    padding:8px 14px;
+    border-radius:999px;
+  }
+  .hero-updated svg{width:14px;height:14px;color:var(--blue-glow);}
+
+  /* ---------- TOC ---------- */
+  .toc-wrap{padding:10px 0 20px;}
+  .toc-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .toc-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--black-card);
+    border:1px solid var(--line);
+    padding:9px 15px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:500;
+    color:var(--grey);
+    transition:border-color .2s, color .2s, background .2s, transform .2s;
+  }
+  .toc-pill span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--grey-dim);
+  }
+  .toc-pill:hover{
+    color:var(--white);
+    border-color:var(--blue-glow);
+    background:#191D27;
+    transform:translateY(-2px);
+  }
+
+  .section-pad{padding:70px 0;}
+
+  /* ---------- LEGAL CONTENT ---------- */
+  .legal-wrap{
+    max-width:820px;
+  }
+  .legal-section{
+    padding:44px 0;
+    border-top:1px solid var(--line);
+    scroll-margin-top:100px;
+  }
+  .legal-section:first-of-type{border-top:none;padding-top:0;}
+  .legal-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .legal-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--grey-dim);
+    border:1px solid var(--line);
+    padding:4px 9px;
+    border-radius:20px;
+    flex-shrink:0;
+  }
+  .legal-section h2{font-size:clamp(22px,2.6vw,28px);}
+  .legal-section h3{
+    font-size:16.5px;
+    margin:26px 0 10px;
+    color:var(--white);
+  }
+  .legal-section p{
+    color:var(--grey);
+    font-size:15.5px;
+    margin-bottom:14px;
+  }
+  .legal-section p:last-child{margin-bottom:0;}
+  .legal-section ul{
+    margin:16px 0;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .legal-section ul li{
+    color:var(--grey);
+    font-size:15px;
+    padding-left:22px;
+    position:relative;
+  }
+  .legal-section ul li::before{
+    content:"";
+    position:absolute;
+    left:0;top:8px;
+    width:6px;height:6px;
+    border-radius:50%;
+    background:var(--blue-glow);
+  }
+  .legal-section ul li b{color:var(--white);font-weight:600;}
+  .legal-section a.inline-link{
+    color:var(--blue-glow);
+    border-bottom:1px solid rgba(107,140,255,0.35);
+    transition:border-color .2s, color .2s;
+  }
+  .legal-section a.inline-link:hover{color:var(--white);border-color:var(--white);}
+
+  .legal-callout{
+    background:var(--black-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 24px;
+    margin-top:20px;
+    position:relative;
+    overflow:hidden;
+  }
+  .legal-callout::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg, var(--blue), var(--red));
+  }
+  .legal-callout p{margin-bottom:0;color:var(--grey);font-size:14.5px;}
+  .legal-callout p b{color:var(--white);}
+
+  .legal-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .legal-table th, .legal-table td{
+    text-align:left;
+    padding:12px 16px;
+    font-size:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .legal-table th{
+    background:var(--black-card);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--grey-dim);
+    font-weight:500;
+  }
+  .legal-table td{color:var(--grey);}
+  .legal-table td b{color:var(--white);font-weight:500;}
+  .legal-table tr:last-child td{border-bottom:none;}
+
+  /* ---------- SIDE + CONTENT LAYOUT ---------- */
+  .legal-layout{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .legal-side{
+    position:sticky;
+    top:100px;
+  }
+  .legal-side .eyebrow{margin-bottom:16px;}
+  .legal-side-list{display:flex;flex-direction:column;gap:4px;}
+  .legal-side-list a{
+    padding:9px 12px;
+    border-radius:8px;
+    font-size:13.5px;
+    color:var(--grey);
+    transition:color .2s, background .2s;
+  }
+  .legal-side-list a:hover{color:var(--white);background:var(--black-card);}
+
+  /* ---------- CONTACT STRIP ---------- */
+  .contact-strip{
+    background:linear-gradient(135deg, var(--blue-deep) 0%, var(--black) 55%, var(--red-deep) 130%);
+    border-radius:20px;
+    padding:52px 56px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+  }
+  .contact-strip::after{
+    content:"";
+    position:absolute;
+    width:400px;height:400px;
+    right:-140px;top:-180px;
+    background:radial-gradient(circle, rgba(255,59,78,0.18), transparent 70%);
+  }
+  .contact-strip h2{font-size:clamp(22px,2.8vw,30px);position:relative;z-index:2;}
+  .contact-strip p{color:var(--grey);margin-top:10px;max-width:420px;position:relative;z-index:2;}
+  .contact-strip .cs-cta{position:relative;z-index:2;display:flex;gap:12px;flex-wrap:wrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:70px 0 30px;
+  }
+  .foot-top{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:50px;
+  }
+  .foot-brand p{color:var(--grey);font-size:14px;margin-top:16px;max-width:280px;}
+  .foot-social{display:flex;gap:10px;margin-top:24px;}
+  .foot-social a{
+    width:36px;height:36px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--grey);
+    transition:.2s;
+  }
+  .foot-social a:hover{color:var(--white);border-color:var(--blue-glow);}
+  .foot-social svg{width:16px;height:16px;}
+  .foot-col h5{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--grey-dim);
+    letter-spacing:0.08em;
+    margin-bottom:20px;
+  }
+  .foot-col ul{display:flex;flex-direction:column;gap:12px;}
+  .foot-col a{color:var(--grey);font-size:14px;transition:.2s;}
+  .foot-col a:hover{color:var(--white);}
+  .foot-bottom{
+    border-top:1px solid var(--line);
+    padding-top:26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .foot-bottom span{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal{display:flex;gap:22px;}
+  .foot-bottom .legal a{color:var(--grey-dim);font-size:13px;}
+  .foot-bottom .legal a:hover{color:var(--grey);}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 980px){
+    .foot-top{grid-template-columns:1fr 1fr;}
+    .legal-layout{grid-template-columns:1fr;}
+    .legal-side{position:static;}
+    .legal-side-list{flex-direction:row;flex-wrap:wrap;}
+  }
+  @media (max-width: 720px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .foot-top{grid-template-columns:1fr;gap:34px;}
+    .hero{padding:150px 0 50px;}
+    .section-pad{padding:50px 0;}
+    .contact-strip{padding:36px 26px;flex-direction:column;align-items:flex-start;}
+    .legal-table{font-size:13px;}
+    .legal-table th, .legal-table td{padding:10px 12px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* mobile nav panel */
+  .mobile-nav{
+    position:fixed;
+    top:76px;left:0;right:0;bottom:0;
+    background:var(--black);
+    z-index:90;
+    padding:30px 32px;
+    display:none;
+    flex-direction:column;
+    gap:26px;
+  }
+  .mobile-nav.open{display:flex;}
+  .mobile-nav a{font-size:20px;font-family:'Space Grotesk',sans-serif;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+        <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+      </svg>
+      OttLoop <span class="mk">TOOLS</span>
+    </a>
+    <nav class="nav-links">
+      <a href="all-tools.html">Tools</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#why">About</a>
+      <a href="index.html#newsletter">Newsletter</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="all-tools.html" class="btn btn-ghost btn-sm" style="display:inline-flex">Browse</a>
+      <a href="index.html#contact" class="btn btn-primary btn-sm">Get in touch</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="all-tools.html">Tools</a>
+    <a href="index.html#categories">Categories</a>
+    <a href="index.html#why">About</a>
+    <a href="index.html#newsletter">Newsletter</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow red"></div>
+    <div class="wrap">
+      <div class="eyebrow mono"><span class="dot"></span> legal</div>
+      <h1>Privacy <span class="accent">Policy</span></h1>
+      <p class="lead">This policy explains what information OttLoop Tools collects, how client-side tools handle your files, which third-party services we rely on, and the choices you have.</p>
+      <div class="hero-updated">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        Last updated: July 3, 2026
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOC ================= -->
+  <section class="toc-wrap">
+    <div class="wrap">
+      <div class="eyebrow mono"><span class="dot"></span> on this page</div>
+      <div class="toc-nav">
+        <a href="#overview" class="toc-pill">Overview</a>
+        <a href="#info-we-collect" class="toc-pill">Information We Collect</a>
+        <a href="#how-we-use" class="toc-pill">How We Use It</a>
+        <a href="#client-side" class="toc-pill">Client-Side Tools &amp; Your Files</a>
+        <a href="#cookies" class="toc-pill">Cookies &amp; Storage</a>
+        <a href="#third-party" class="toc-pill">Third-Party Services</a>
+        <a href="#retention" class="toc-pill">Data Retention</a>
+        <a href="#your-rights" class="toc-pill">Your Rights</a>
+        <a href="#children" class="toc-pill">Children's Privacy</a>
+        <a href="#changes" class="toc-pill">Changes</a>
+        <a href="#contact-us" class="toc-pill">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEGAL CONTENT ================= -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="legal-layout">
+
+        <aside class="legal-side reveal">
+          <div class="eyebrow mono"><span class="dot"></span> sections</div>
+          <div class="legal-side-list">
+            <a href="#overview">Overview</a>
+            <a href="#info-we-collect">Information We Collect</a>
+            <a href="#how-we-use">How We Use It</a>
+            <a href="#client-side">Client-Side Tools</a>
+            <a href="#cookies">Cookies &amp; Storage</a>
+            <a href="#third-party">Third-Party Services</a>
+            <a href="#retention">Data Retention</a>
+            <a href="#your-rights">Your Rights</a>
+            <a href="#children">Children's Privacy</a>
+            <a href="#changes">Changes</a>
+            <a href="#contact-us">Contact Us</a>
+          </div>
+        </aside>
+
+        <div class="legal-wrap">
+
+          <div class="legal-section reveal" id="overview">
+            <div class="legal-head"><span class="legal-num">01</span><h2>Overview</h2></div>
+            <p>OttLoop Tools ("OttLoop," "we," "us," or "our") operates tools.ottloop.com, a free directory of browser-based image, PDF, text, SEO, developer, CSS, calculator and utility tools. This Privacy Policy describes how we handle information when you visit the site, use a tool, subscribe to our newsletter, or contact us.</p>
+            <p>By using tools.ottloop.com, you agree to the practices described in this policy. If you don't agree, please don't use the site.</p>
+          </div>
+
+          <div class="legal-section reveal" id="info-we-collect">
+            <div class="legal-head"><span class="legal-num">02</span><h2>Information We Collect</h2></div>
+            <p>We keep data collection to what's needed to run the site and respond to you. Depending on how you use OttLoop, we may collect:</p>
+            <ul>
+              <li><b>Contact form details</b> — the name, email address, subject and message you submit through our contact form.</li>
+              <li><b>Newsletter email</b> — the email address you provide when subscribing to tool-drop updates.</li>
+              <li><b>Basic usage data</b> — standard technical information such as browser type, device type, approximate location, and pages visited, collected automatically by our hosting infrastructure for security and performance.</li>
+              <li><b>Files you upload to a tool</b> — see the <a href="#client-side" class="inline-link">Client-Side Tools</a> section below for how this is handled.</li>
+            </ul>
+            <div class="legal-callout">
+              <p>We do not require account creation, and we do not ask for payment information anywhere on the site.</p>
+            </div>
+          </div>
+
+          <div class="legal-section reveal" id="how-we-use">
+            <div class="legal-head"><span class="legal-num">03</span><h2>How We Use Your Information</h2></div>
+            <p>We use the information above only for the following purposes:</p>
+            <ul>
+              <li>Responding to messages sent through the contact form.</li>
+              <li>Sending tool-drop emails to newsletter subscribers, and letting you unsubscribe at any time.</li>
+              <li>Understanding aggregate site usage so we can prioritize which tools to build next.</li>
+              <li>Keeping the site secure and diagnosing technical issues.</li>
+            </ul>
+            <p>We do not sell your personal information, and we do not use it to build advertising profiles.</p>
+          </div>
+
+          <div class="legal-section reveal" id="client-side">
+            <div class="legal-head"><span class="legal-num">04</span><h2>Client-Side Tools &amp; Your Files</h2></div>
+            <p>Where a tool can run entirely in your browser — most image, text, conversion, CSS and calculator tools — it does. That means files like photos, PDFs or text you upload are processed on your own device and are never transmitted to our servers.</p>
+            <p>A small number of tools may require server-side processing to work (for example, certain heavy PDF operations). For those tools, we only ever hold your file in temporary memory long enough to complete the requested operation, and we delete it immediately afterward. We do not store, inspect, or share the contents of files you process through OttLoop.</p>
+            <table class="legal-table">
+              <tr><th>Tool type</th><th>Where processing happens</th><th>File stored on our servers?</th></tr>
+              <tr><td><b>Image, Text, CSS, Calculator, Conversion tools</b></td><td>Your browser</td><td>No</td></tr>
+              <tr><td><b>Select PDF tools</b></td><td>Temporary server processing</td><td>No — deleted immediately after processing</td></tr>
+            </table>
+          </div>
+
+          <div class="legal-section reveal" id="cookies">
+            <div class="legal-head"><span class="legal-num">05</span><h2>Cookies &amp; Local Storage</h2></div>
+            <p>OttLoop uses a minimal set of cookies and browser storage, limited to:</p>
+            <ul>
+              <li><b>Essential cookies</b> — needed for the site to function, such as remembering your form inputs during a session.</li>
+              <li><b>Preference storage</b> — for example, remembering settings within a specific tool so you don't have to reset them each visit.</li>
+            </ul>
+            <p>We do not use third-party advertising or tracking cookies. You can clear or block cookies at any time through your browser settings; doing so may affect how some tools remember your preferences.</p>
+          </div>
+
+          <div class="legal-section reveal" id="third-party">
+            <div class="legal-head"><span class="legal-num">06</span><h2>Third-Party Services</h2></div>
+            <p>We rely on a small number of third-party services to run the site:</p>
+            <ul>
+              <li><b>Google Fonts</b> — used to load the site's typefaces (Space Grotesk, IBM Plex Mono, Inter).</li>
+              <li><b>Google Apps Script</b> — used to route newsletter and contact form submissions into a private spreadsheet so we can respond to you.</li>
+              <li><b>Hosting &amp; infrastructure providers</b> — used to serve the site and keep it available.</li>
+            </ul>
+            <p>These providers process limited data on our behalf and are bound by their own privacy terms. We choose providers that align with our commitment to minimal data collection.</p>
+          </div>
+
+          <div class="legal-section reveal" id="retention">
+            <div class="legal-head"><span class="legal-num">07</span><h2>Data Retention</h2></div>
+            <p>Contact form and newsletter submissions are kept only as long as needed to respond to you or maintain the newsletter list — typically until you ask us to delete them or unsubscribe. Files processed by client-side tools are never retained, since they never leave your device. Files processed by server-side tools are deleted immediately after the operation completes.</p>
+          </div>
+
+          <div class="legal-section reveal" id="your-rights">
+            <div class="legal-head"><span class="legal-num">08</span><h2>Your Rights &amp; Choices</h2></div>
+            <p>Depending on where you live, you may have rights to access, correct, or delete the personal information we hold about you, and to object to or restrict certain processing. To exercise any of these rights, contact us using the details below and we'll respond within a reasonable time.</p>
+            <ul>
+              <li>You can unsubscribe from the newsletter at any time using the link in any email we send.</li>
+              <li>You can request a copy of any contact-form data associated with your email address.</li>
+              <li>You can ask us to delete data we hold about you, subject to any legal obligations to retain it.</li>
+            </ul>
+          </div>
+
+          <div class="legal-section reveal" id="children">
+            <div class="legal-head"><span class="legal-num">09</span><h2>Children's Privacy</h2></div>
+            <p>OttLoop Tools is not directed at children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we'll remove it.</p>
+          </div>
+
+          <div class="legal-section reveal" id="changes">
+            <div class="legal-head"><span class="legal-num">10</span><h2>Changes to This Policy</h2></div>
+            <p>We may update this Privacy Policy as the site grows and new tools are added. Material changes will be reflected by updating the "Last updated" date at the top of this page. We encourage you to review this page periodically.</p>
+          </div>
+
+          <div class="legal-section reveal" id="contact-us">
+            <div class="legal-head"><span class="legal-num">11</span><h2>Contact Us</h2></div>
+            <p>If you have questions about this Privacy Policy or how your information is handled, reach out any time:</p>
+            <ul>
+              <li><b>Email:</b> hello@ottloop.com</li>
+              <li><b>Response time:</b> usually within 24 hours</li>
+              <li><b>Site:</b> tools.ottloop.com</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT STRIP ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="contact-strip reveal">
+        <div>
+          <h2>Still have a question?</h2>
+          <p>Send us a message and we'll walk you through exactly how your data is handled.</p>
+        </div>
+        <div class="cs-cta">
+          <a href="index.html#contact" class="btn btn-primary">Contact us</a>
+          <a href="all-tools.html" class="btn btn-ghost">Browse all tools →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="index.html#top" class="logo">
+          <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+            <circle cx="15" cy="15" r="13" stroke="#3B63FF" stroke-width="2"/>
+            <path d="M9 15a6 6 0 0 1 6-6" stroke="#FF3B4E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="21" cy="15" r="2.4" fill="#3B63FF"/>
+          </svg>
+          OttLoop <span class="mk">TOOLS</span>
+        </a>
+        <p>A free, growing loop of 210 digital tools — image, PDF, text, dev, SEO and more, all in one place at tools.ottloop.com.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4 4 0 0 0-6.9 3.7 11.5 11.5 0 0 1-8.4-4.3 4 4 0 0 0 1.3 5.4c-.6 0-1.2-.2-1.7-.5v.1a4 4 0 0 0 3.2 4 4 4 0 0 1-1.8.1 4 4 0 0 0 3.8 2.8A8 8 0 0 1 2 18.6a11.3 11.3 0 0 0 6.3 1.9c7.5 0 11.7-6.4 11.7-11.9v-.5c.8-.6 1.5-1.3 2-2.2Z"/></svg></a>
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1-1.5-1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.7 1a9 9 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.9-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9Z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h5>Categories</h5>
+        <ul>
+          <li><a href="all-tools.html#cat-image">Image Tools</a></li>
+          <li><a href="all-tools.html#cat-pdf">PDF Tools</a></li>
+          <li><a href="all-tools.html#cat-text">Text Tools</a></li>
+          <li><a href="all-tools.html#cat-developer">Developer Tools</a></li>
+          <li><a href="all-tools.html">View all →</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html#why">About</a></li>
+          <li><a href="index.html#newsletter">Newsletter</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Cookie policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 OttLoop. All rights reserved.</span>
+      <div class="legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
