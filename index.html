@@ -194,22 +194,23 @@
   .burger.open span:nth-child(2){ opacity:0; }
   .burger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
-  /* ---------- mega menu (desktop) ---------- */
+  /* ---------- mega menu (desktop) — dropdown accordion under "Tools" ---------- */
+  .has-mega{ position:relative; }
   .mega{
     position:absolute;
-    top:100%;
-    left:0; right:0;
+    top:calc(100% + 10px);
+    left:0;
+    width:380px;
     background:var(--black-card);
+    border:1px solid var(--line);
     border-top:2px solid transparent;
     border-image:linear-gradient(90deg, var(--blue), var(--red)) 1;
-    border-bottom:1px solid var(--line);
+    border-radius:14px;
     box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
     opacity:0;
     visibility:hidden;
     transform:translateY(-8px);
     transition:opacity .18s ease, transform .18s ease, visibility .18s;
-    max-height:calc(100vh - var(--nav-h));
-    overflow-y:auto;
   }
   .mega.open{
     opacity:1;
@@ -217,26 +218,39 @@
     transform:translateY(0);
   }
   .mega-inner{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:30px 32px 22px;
+    padding:14px;
   }
-  .mega-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:0;
+  .mega-list{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    max-height:56vh;
+    overflow-y:auto;
   }
-  .cat-block{
-    padding:12px 18px;
-    border-right:1px solid var(--line);
-  }
-  .cat-block:nth-child(4n){ border-right:none; }
-  .cat-head{
+  .mega-list::-webkit-scrollbar{ width:5px; }
+  .mega-list::-webkit-scrollbar-thumb{ background:var(--line); border-radius:10px; }
+
+  .cat-accordion{ border-radius:9px; overflow:hidden; }
+  .cat-accordion-head{
     display:flex;
     align-items:center;
     gap:10px;
-    margin-bottom:12px;
+    padding:10px 10px;
+    border-radius:9px;
+    cursor:pointer;
+    background:none;
+    border:none;
+    width:100%;
+    text-align:left;
+    font-family:'Inter',sans-serif;
+    transition:background .15s;
   }
+  .cat-accordion-head:hover{ background:rgba(255,255,255,0.04); }
+  .cat-accordion.open .cat-accordion-head{ background:var(--black-card-2); }
+  .cat-accordion.open .cat-name-sm{ color:var(--white); }
+  .cat-accordion.open .cat-icon-sm.b{ background:var(--blue); color:#fff; }
+  .cat-accordion.open .cat-icon-sm.r{ background:var(--red); color:#fff; }
+
   .cat-icon-sm{
     width:30px;height:30px;
     border-radius:8px;
@@ -246,31 +260,51 @@
   }
   .cat-icon-sm.b{ background:var(--blue-tint); color:var(--blue-glow); }
   .cat-icon-sm.r{ background:var(--red-tint); color:var(--red); }
-  .cat-name-sm{ font-size:14px; font-weight:600; color:var(--white); flex:1; font-family:'Space Grotesk',sans-serif; }
+  .cat-name-sm{ font-size:14px; font-weight:600; color:var(--grey); flex:1; font-family:'Space Grotesk',sans-serif; }
   .cat-count-sm{
     font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--grey-dim);
     border:1px solid var(--line); padding:2px 8px; border-radius:20px;
+    flex:none;
   }
-  .tool-list-sm{ list-style:none; margin:0; padding:0; max-height:190px; overflow-y:auto; }
-  .tool-list-sm::-webkit-scrollbar{ width:5px; }
-  .tool-list-sm::-webkit-scrollbar-thumb{ background:var(--line); border-radius:10px; }
-  .tool-list-sm li a{
+  .accordion-chev{
+    width:7px;height:7px; flex:none;
+    border-right:1.6px solid var(--grey-dim);
+    border-bottom:1.6px solid var(--grey-dim);
+    transform:rotate(45deg);
+    transition:transform .18s ease;
+    margin-left:2px;
+  }
+  .cat-accordion.open .accordion-chev{ transform:rotate(225deg); border-color:var(--blue-glow); }
+
+  .cat-accordion-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+  }
+  .cat-accordion.open .cat-accordion-body{ max-height:900px; }
+  .sub-list{
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    padding:4px 6px 10px 46px;
+  }
+  .sub-list a{
     display:block;
-    font-size:13px;
+    font-size:13.5px;
     color:var(--grey);
-    padding:5px 8px 5px 12px;
+    padding:6px 10px 6px 14px;
     border-radius:6px;
     position:relative;
     transition:color .15s, background .15s;
   }
-  .tool-list-sm li a::before{
+  .sub-list a::before{
     content:"";
-    position:absolute; left:0; top:9px;
+    position:absolute; left:0; top:12px;
     width:4px;height:4px;border-radius:50%;
     background:var(--grey-dim);
   }
-  .tool-list-sm li a:hover{ color:var(--blue-glow); background:rgba(255,255,255,0.04); }
-  .tool-list-sm li a:hover::before{ background:var(--blue-glow); }
+  .sub-list a:hover{ color:var(--blue-glow); background:rgba(255,255,255,0.04); }
+  .sub-list a:hover::before{ background:var(--blue-glow); }
 
   .mega-footer{
     display:flex;
@@ -747,9 +781,7 @@
   @media (max-width: 1080px){
     .nav-links{ gap:0; }
     .nav-link{ padding:9px 10px; font-size:14px; }
-    .mega-grid{ grid-template-columns:repeat(3,1fr); }
-    .cat-block:nth-child(4n){ border-right:1px solid var(--line); }
-    .cat-block:nth-child(3n){ border-right:none; }
+    .mega{ width:340px; }
   }
   @media (max-width: 980px){
     .hero-grid{grid-template-columns:1fr;}
@@ -805,7 +837,18 @@
 
     <ul class="nav-links" id="navLinks">
       <li><a href="https://ottloop.github.io/tools/" class="nav-link">Home</a></li>
-      <li><button class="nav-link" id="megaTrigger">Tools <span class="chev"></span></button></li>
+      <li class="has-mega">
+        <button class="nav-link" id="megaTrigger">Tools <span class="chev"></span></button>
+        <div class="mega" id="megaMenu">
+          <div class="mega-inner">
+            <div class="mega-list" id="megaList"></div>
+            <div class="mega-footer">
+              <span class="tally mono" id="tally">200+ tools across 14 categories</span>
+              <a href="all-tools.html" class="browse">Browse all →</a>
+            </div>
+          </div>
+        </div>
+      </li>
       <li><a href="categories.html" class="nav-link">Categories</a></li>
       <li><a href="about.html" class="nav-link">About</a></li>
       <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
@@ -818,17 +861,6 @@
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-    </div>
-  </div>
-
-  <!-- Desktop mega menu -->
-  <div class="mega" id="megaMenu">
-    <div class="mega-inner">
-      <div class="mega-grid" id="megaGrid"></div>
-      <div class="mega-footer">
-        <span class="tally mono" id="tally">200+ tools across 14 categories</span>
-        <a href="all-tools.html" class="browse">Browse all tools →</a>
-      </div>
     </div>
   </div>
 </header>
@@ -1289,46 +1321,40 @@
     { icon:"🎓", name:"Education Tools", tools:["GPA Calculator","CGPA Calculator","Attendance Calculator","Marks Percentage Calculator","Study Planner","Exam Countdown","Formula Sheet Generator","Unit Converter","Scientific Calculator","Grade Calculator"] }
   ];
 
-  // ---------- render desktop mega menu ----------
-  const megaGrid = document.getElementById('megaGrid');
+  // ---------- render desktop mega menu: category accordion (click a category to reveal its subcategories) ----------
+  const megaList = document.getElementById('megaList');
   let totalTools = 0;
-  CATEGORIES.forEach((cat, i) => {
+
+  function buildAccordionItem(cat, i){
     totalTools += cat.tools.length;
-    const block = document.createElement('div');
-    block.className = 'cat-block';
     const iconClass = i % 2 === 0 ? 'b' : 'r';
-    block.innerHTML = `
-      <div class="cat-head">
+    const wrap = document.createElement('div');
+    wrap.className = 'cat-accordion';
+    wrap.innerHTML = `
+      <button class="cat-accordion-head">
         <div class="cat-icon-sm ${iconClass}">${cat.icon}</div>
         <div class="cat-name-sm">${cat.name}</div>
         <span class="cat-count-sm">${cat.tools.length}</span>
+        <span class="accordion-chev"></span>
+      </button>
+      <div class="cat-accordion-body">
+        <div class="sub-list">
+          ${cat.tools.map(t => `<a href="#">${t}</a>`).join('')}
+        </div>
       </div>
-      <ul class="tool-list-sm">
-        ${cat.tools.map(t => `<li><a href="#">${t}</a></li>`).join('')}
-      </ul>
     `;
-    megaGrid.appendChild(block);
-  });
+    wrap.querySelector('.cat-accordion-head').addEventListener('click', () => {
+      wrap.classList.toggle('open');
+    });
+    return wrap;
+  }
+
+  CATEGORIES.forEach((cat, i) => megaList.appendChild(buildAccordionItem(cat, i)));
   document.getElementById('tally').textContent = `${totalTools}+ tools across ${CATEGORIES.length} categories`;
 
-  // ---------- render mobile accordion ----------
+  // ---------- render mobile accordion (same pattern: category list hidden until "Tools" is opened, subcategories hidden until that category is clicked) ----------
   const mobileSub = document.getElementById('mobileSub');
-  const mobileGroups = document.createElement('div');
-  CATEGORIES.forEach(cat => {
-    const group = document.createElement('div');
-    group.style.marginBottom = '6px';
-    group.innerHTML = `
-      <div style="display:flex;align-items:center;gap:8px;padding:10px 6px 4px;color:var(--white);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;">
-        <span>${cat.icon}</span> ${cat.name}
-        <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--grey-dim);border:1px solid var(--line);padding:2px 7px;border-radius:20px;">${cat.tools.length}</span>
-      </div>
-      <ul style="padding:2px 4px 10px 24px;display:flex;flex-direction:column;gap:2px;">
-        ${cat.tools.map(t => `<li><a href="#" style="font-size:13.5px;color:var(--grey);padding:5px 4px;display:block;">${t}</a></li>`).join('')}
-      </ul>
-    `;
-    mobileGroups.appendChild(group);
-  });
-  mobileSub.appendChild(mobileGroups);
+  CATEGORIES.forEach((cat, i) => mobileSub.appendChild(buildAccordionItem(cat, i)));
 
   // ---------- desktop mega menu open/close ----------
   const megaMenu = document.getElementById('megaMenu');
